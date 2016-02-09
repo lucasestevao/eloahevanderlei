@@ -2,13 +2,49 @@
 	$misc: (
 		z-index-base:		10000,
 		max-features:		20,
-		max-sidebar-links:	20
+		max-sidebar-links:	20,
+		main-layout: (
+			default: (
+				rows:		2,
+				columns:	4,
+				pad:		0.5,
+				minHeight:	20em
+			),
+			xlarge: (
+				rows:		2,
+				columns:	3,
+				pad:		0.5,
+				minHeight:	20em
+			),
+			large: (
+				rows:		2,
+				columns:	2,
+				pad:		0.5,
+				minHeight:	20em
+			),
+			medium: (
+				rows:		3,
+				columns:	2,
+				pad:		0.5,
+				minHeight:	18em
+			),
+			xsmall: (
+				rows:		2,
+				columns:	1,
+				pad:		0.5,
+				minHeight:	18em
+			)
+		)
 	);
 
 // Duration.
 	$duration: (
 		transition:			0.2s,
-		activation:			1s
+		activation:			1s,
+		header:				1s,
+		panel:				0.5s,
+		modal:				0.5s,
+		thumb:				0.15s
 	);
 
 // Size.
@@ -19,7 +55,8 @@
 		element-margin:		2em,
 		sidebar-width:		16em,
 		sidebar-height:		3.5em,	// when <=large is active
-		inner-width:		75em
+		inner-width:		75em,
+		header:				4em
 	);
 
 // Font.
