@@ -4054,7 +4054,6 @@ body.is-ie #sidebar > .inner {
   padding: 1.35em 0;
   position: relative;
   text-decoration: none;
-  text-transform: uppercase;
 }
 /* line 83, ../sass/layout/_sidebar.scss */
 #sidebar nav a:before, #sidebar nav a:after {
