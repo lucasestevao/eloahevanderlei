@@ -6,7 +6,7 @@
 /* Type */
 /* line 16, ../sass/ie9.scss */
 h1.major:after {
-  background: #ed1b2f;
+  background: #f8b118;
 }
 
 /* Wrapper */
@@ -67,7 +67,7 @@ body.is-ie .wrapper.fullscreen {
 /* Sidebar */
 /* line 90, ../sass/ie9.scss */
 #sidebar nav a:after {
-  background-color: #ed1b2f;
+  background-color: #f8b118;
 }
 
 /* Header */

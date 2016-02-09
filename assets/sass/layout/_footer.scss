@@ -7,12 +7,10 @@
 /* Footer */
 
 	#footer {
-		#sidebar + #wrapper + & {
-			margin-left: _size(sidebar-width);
+		padding-left: _size(sidebar-width);
 
-			@include breakpoint(large) {
-				margin-left: 0;
-			}
+		@include breakpoint(large) {
+			padding-left: 0;
 		}
 
 		> .inner {

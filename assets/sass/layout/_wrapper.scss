@@ -7,11 +7,16 @@
 /* Wrapper (main) */
 
 	#wrapper {
-		#sidebar + & {
-			margin-left: _size(sidebar-width);
+		> section {
+			padding-left: _size(sidebar-width);
 
 			@include breakpoint(large) {
-				margin-left: 0;
+				padding-left: 0;
+			}
+		}
+
+		#sidebar + & {
+			@include breakpoint(large) {
 				padding-top: _size(sidebar-height);
 			}
 

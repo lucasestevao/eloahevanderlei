@@ -1923,7 +1923,7 @@ body {
 }
 /* line 26, ../sass/base/_page.scss */
 body {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
 }
 /* line 32, ../sass/base/_page.scss */
 body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -2022,10 +2022,10 @@ h1.major {
 }
 /* line 77, ../sass/base/_typography.scss */
 h1.major:after {
-  background-image: -moz-linear-gradient(to right, #f8b118, #ed1b2f);
-  background-image: -webkit-linear-gradient(to right, #f8b118, #ed1b2f);
-  background-image: -ms-linear-gradient(to right, #f8b118, #ed1b2f);
-  background-image: linear-gradient(to right, #f8b118, #ed1b2f);
+  background-image: -moz-linear-gradient(to right, #ed1b2f, #f8b118);
+  background-image: -webkit-linear-gradient(to right, #ed1b2f, #f8b118);
+  background-image: -ms-linear-gradient(to right, #ed1b2f, #f8b118);
+  background-image: linear-gradient(to right, #ed1b2f, #f8b118);
   -moz-transition: max-width 0.2s ease;
   -webkit-transition: max-width 0.2s ease;
   -ms-transition: max-width 0.2s ease;
@@ -2294,7 +2294,7 @@ input[type="button"].special,
 button.special,
 .button.special {
   background-color: #ffffff;
-  color: #ffffff !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 /* line 80, ../sass/components/_button.scss */
 input[type="submit"].special:after,
@@ -2720,7 +2720,7 @@ textarea:focus {
 
 /* line 107, ../sass/components/_form.scss */
 select option {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.9);
   color: #ffffff;
 }
 
@@ -2799,7 +2799,7 @@ input[type="checkbox"]:checked + label:before,
 input[type="radio"]:checked + label:before {
   background: #ffffff;
   border-color: #ffffff;
-  color: #ed1b2f;
+  color: #f8b118;
   content: '\f00c';
 }
 /* line 175, ../sass/components/_form.scss */
@@ -2876,7 +2876,7 @@ input[type="radio"] + label:before {
   display: block;
   background: #ffffff;
   border-radius: 100%;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.9);
   text-align: center;
   line-height: 2.5em;
   margin: 0 0 1.3em 0;
@@ -2887,11 +2887,11 @@ input[type="radio"] + label:before {
 }
 /* line 32, ../sass/components/_icon.scss */
 .wrapper.style1 .icon.major:before {
-  color: #f8b118;
+  color: #ed1b2f;
 }
 /* line 36, ../sass/components/_icon.scss */
 .wrapper.style1-alt .icon.major:before {
-  color: #d79507;
+  color: #c51021;
 }
 /* line 40, ../sass/components/_icon.scss */
 .wrapper.style2 .icon.major:before {
@@ -2903,11 +2903,11 @@ input[type="radio"] + label:before {
 }
 /* line 48, ../sass/components/_icon.scss */
 .wrapper.style3 .icon.major:before {
-  color: #ed1b2f;
+  color: #f8b118;
 }
 /* line 52, ../sass/components/_icon.scss */
 .wrapper.style3-alt .icon.major:before {
-  color: #c51021;
+  color: #d79507;
 }
 
 /* Image */
@@ -3355,7 +3355,7 @@ body.is-ie .spotlights > section {
   -webkit-transition: opacity 1s ease;
   -ms-transition: opacity 1s ease;
   transition: opacity 1s ease;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
   content: '';
   display: block;
   height: 100%;
@@ -3559,11 +3559,11 @@ table.alt tfoot {
 }
 /* line 34, ../sass/components/_wrapper.scss */
 .wrapper.style1 {
-  background-color: #f8b118;
+  background-color: #ed1b2f;
 }
 /* line 38, ../sass/components/_wrapper.scss */
 .wrapper.style1-alt {
-  background-color: #d79507;
+  background-color: #c51021;
 }
 /* line 42, ../sass/components/_wrapper.scss */
 .wrapper.style2 {
@@ -3575,11 +3575,11 @@ table.alt tfoot {
 }
 /* line 50, ../sass/components/_wrapper.scss */
 .wrapper.style3 {
-  background-color: #ed1b2f;
+  background-color: #f8b118;
 }
 /* line 54, ../sass/components/_wrapper.scss */
 .wrapper.style3-alt {
-  background-color: #c51021;
+  background-color: #d79507;
 }
 /* line 58, ../sass/components/_wrapper.scss */
 .wrapper.fullscreen {
@@ -3682,7 +3682,7 @@ body.is-ie .wrapper.fullscreen {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  background-color: #f8b118;
+  background-color: #ed1b2f;
   cursor: default;
   padding: 1.75em 2em;
 }
@@ -3772,52 +3772,57 @@ body.is-ie .wrapper.fullscreen {
 
 /* Wrapper (main) */
 /* line 10, ../sass/layout/_wrapper.scss */
-#sidebar + #wrapper {
-  margin-left: 18em;
+#wrapper > section {
+  padding-left: 16em;
 }
 @media screen and (max-width: 1280px) {
   /* line 10, ../sass/layout/_wrapper.scss */
+  #wrapper > section {
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 1280px) {
+  /* line 18, ../sass/layout/_wrapper.scss */
   #sidebar + #wrapper {
-    margin-left: 0;
     padding-top: 3.5em;
   }
 }
 @media screen and (max-width: 736px) {
-  /* line 10, ../sass/layout/_wrapper.scss */
+  /* line 18, ../sass/layout/_wrapper.scss */
   #sidebar + #wrapper {
     padding-top: 0;
   }
 }
-/* line 25, ../sass/layout/_wrapper.scss */
+/* line 30, ../sass/layout/_wrapper.scss */
 #header + #wrapper > .wrapper > .inner {
   margin: 0 auto;
 }
 
 /* Footer */
-/* line 10, ../sass/layout/_footer.scss */
-#sidebar + #wrapper + #footer {
-  margin-left: 18em;
+/* line 9, ../sass/layout/_footer.scss */
+#footer {
+  padding-left: 16em;
 }
 @media screen and (max-width: 1280px) {
-  /* line 10, ../sass/layout/_footer.scss */
-  #sidebar + #wrapper + #footer {
-    margin-left: 0;
+  /* line 9, ../sass/layout/_footer.scss */
+  #footer {
+    padding-left: 0;
   }
 }
-/* line 19, ../sass/layout/_footer.scss */
+/* line 17, ../sass/layout/_footer.scss */
 #footer > .inner a {
   border-bottom-color: rgba(255, 255, 255, 0.15);
 }
-/* line 22, ../sass/layout/_footer.scss */
+/* line 20, ../sass/layout/_footer.scss */
 #footer > .inner a:hover {
   border-bottom-color: transparent;
 }
-/* line 27, ../sass/layout/_footer.scss */
+/* line 25, ../sass/layout/_footer.scss */
 #footer > .inner .menu {
   font-size: 0.8em;
   color: rgba(255, 255, 255, 0.15);
 }
-/* line 34, ../sass/layout/_footer.scss */
+/* line 32, ../sass/layout/_footer.scss */
 #header + #wrapper + #footer > .inner {
   margin: 0 auto;
 }
@@ -3826,16 +3831,16 @@ body.is-ie .wrapper.fullscreen {
 /* line 9, ../sass/layout/_sidebar.scss */
 #sidebar {
   padding: 2.5em 2.5em 0.5em 2.5em ;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
   cursor: default;
   height: 100vh;
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
   position: fixed;
-  text-align: right;
+  text-align: left;
   top: 0;
-  width: 18em;
+  width: 16em;
   z-index: 10000;
 }
 /* line 23, ../sass/layout/_sidebar.scss */
@@ -4039,7 +4044,7 @@ body.is-ie #sidebar > .inner {
   -ms-transition: color 0.2s ease;
   transition: color 0.2s ease;
   border: 0;
-  color: rgba(255, 255, 255, 0.35);
+  color: #ed1b2f;
   display: block;
   font-size: 0.6em;
   font-weight: bold;
@@ -4061,16 +4066,12 @@ body.is-ie #sidebar > .inner {
   right: 0;
   width: 100%;
 }
-/* line 94, ../sass/layout/_sidebar.scss */
-#sidebar nav a:before {
-  background: white;
-}
 /* line 98, ../sass/layout/_sidebar.scss */
 #sidebar nav a:after {
-  background-image: -moz-linear-gradient(to right, #ed1b2f, #c51021);
-  background-image: -webkit-linear-gradient(to right, #ed1b2f, #c51021);
-  background-image: -ms-linear-gradient(to right, #ed1b2f, #c51021);
-  background-image: linear-gradient(to right, #ed1b2f, #c51021);
+  background-image: -moz-linear-gradient(to left, #ed1b2f, #c51021);
+  background-image: -webkit-linear-gradient(to left, #ed1b2f, #c51021);
+  background-image: -ms-linear-gradient(to left, #ed1b2f, #c51021);
+  background-image: linear-gradient(to left, #ed1b2f, #c51021);
   -moz-transition: max-width 0.2s ease;
   -webkit-transition: max-width 0.2s ease;
   -ms-transition: max-width 0.2s ease;
@@ -4079,21 +4080,29 @@ body.is-ie #sidebar > .inner {
 }
 /* line 104, ../sass/layout/_sidebar.scss */
 #sidebar nav a:hover {
-  color: rgba(255, 255, 255, 0.55);
+  color: #f14a5a;
 }
 /* line 108, ../sass/layout/_sidebar.scss */
 #sidebar nav a.active {
-  color: #ffffff;
+  color: #ef3345;
 }
 /* line 111, ../sass/layout/_sidebar.scss */
 #sidebar nav a.active:after {
   max-width: 100%;
 }
+/* line 116, ../sass/layout/_sidebar.scss */
+#sidebar nav a.logo {
+  text-align: center;
+}
 /* line 119, ../sass/layout/_sidebar.scss */
+#sidebar nav a.logo:before, #sidebar nav a.logo:after {
+  display: none;
+}
+/* line 128, ../sass/layout/_sidebar.scss */
 body.is-loading #sidebar > .inner {
   opacity: 0;
 }
-/* line 125, ../sass/layout/_sidebar.scss */
+/* line 134, ../sass/layout/_sidebar.scss */
 body.is-loading #sidebar nav ul li {
   -moz-transform: translateY(2em);
   -webkit-transform: translateY(2em);
@@ -4113,7 +4122,7 @@ body.is-loading #sidebar nav ul li {
     top: 0;
     width: 100%;
   }
-  /* line 143, ../sass/layout/_sidebar.scss */
+  /* line 152, ../sass/layout/_sidebar.scss */
   #sidebar > .inner {
     -moz-flex-direction: row;
     -webkit-flex-direction: row;
@@ -4126,12 +4135,12 @@ body.is-loading #sidebar nav ul li {
     height: inherit;
     line-height: inherit;
   }
-  /* line 150, ../sass/layout/_sidebar.scss */
+  /* line 159, ../sass/layout/_sidebar.scss */
   #sidebar nav {
     height: inherit;
     line-height: inherit;
   }
-  /* line 154, ../sass/layout/_sidebar.scss */
+  /* line 163, ../sass/layout/_sidebar.scss */
   #sidebar nav ul {
     display: -moz-flex;
     display: -webkit-flex;
@@ -4141,7 +4150,7 @@ body.is-loading #sidebar nav ul li {
     line-height: inherit;
     margin: 0;
   }
-  /* line 160, ../sass/layout/_sidebar.scss */
+  /* line 169, ../sass/layout/_sidebar.scss */
   #sidebar nav ul li {
     display: block;
     height: inherit;
@@ -4149,16 +4158,30 @@ body.is-loading #sidebar nav ul li {
     margin: 0 0 0 2em;
     padding: 0;
   }
-  /* line 169, ../sass/layout/_sidebar.scss */
+  /* line 178, ../sass/layout/_sidebar.scss */
   #sidebar nav a {
     height: inherit;
     line-height: inherit;
     padding: 0;
   }
-  /* line 174, ../sass/layout/_sidebar.scss */
+  /* line 183, ../sass/layout/_sidebar.scss */
   #sidebar nav a:after {
     background-image: none;
     background-color: #ed1b2f;
+  }
+  /* line 188, ../sass/layout/_sidebar.scss */
+  #sidebar nav a.logo {
+    text-align: center;
+  }
+  /* line 190, ../sass/layout/_sidebar.scss */
+  #sidebar nav a.logo img {
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+  }
+  /* line 195, ../sass/layout/_sidebar.scss */
+  #sidebar nav a.logo:before, #sidebar nav a.logo:after {
+    display: none;
   }
 }
 @media screen and (max-width: 736px) {
@@ -4201,7 +4224,6 @@ body.is-loading #sidebar nav ul li {
 }
 
 /* line 1, ../sass/custom/_geral.scss */
-.img-logo {
-  left: -25%;
+.logo {
   position: relative;
 }
