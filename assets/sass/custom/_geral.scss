@@ -140,8 +140,20 @@
 			position: absolute;
 			left: 0;
 			top: 200px;
-			width: 45%;
-			height: 80%;
+			width: 720px;
+			height: 480px;
+
+			@include breakpoint(xlarge) {
+				top: 200px;
+				width: 640px;
+				height: 480px;
+			}
+
+			@include breakpoint(large) {
+				top: 180px;
+				width: 100%;
+				opacity: 0.8;
+			}
 
 			@include breakpoint(medium) {
 				width: 100%;
@@ -152,8 +164,8 @@
 	}
 	> .inner {
 		position: relative;
-		width: 100%;
-		padding-left: 45%;
+		//width: 100%;
+		//padding-left: 45%;
 
 		@include padding(4em, 4em);
 
@@ -164,9 +176,33 @@
 		@include breakpoint(small) {
 			@include padding(2em, 1em);
 		}
+		section{
+			position: relative;
+			top: -4px;
+			left: 500px;
+			width: 620px;
+
+			@include breakpoint(xlarge) {
+				top: -4px;
+				width: 580px;
+				left: 420px;
+			}
+			@include breakpoint(large) {
+				top: 40px;
+				width: 100%;
+				left: 0;
+			}
+		}
 	}
 	.button{
-		left: 0px;
+		left: -36px;
+		background-color: _palette(accent3);
+		@include breakpoint(xlarge) {
+			left: -40px;
+		}
+		@include breakpoint(large) {
+			text-align: center;
+		}
 	}
 }
 
@@ -177,12 +213,14 @@
 
 	@include breakpoint(xlarge) {
 		bottom: 1em;
-		margin: 5px;
+		margin: 7px;
 	}
 	@include breakpoint(large) {
 		top: 0;
 		right: 0;
 		bottom: initial;
+		//TODO
+		display: none;
 	}
 	@include breakpoint(medium) {
 		//TODO
