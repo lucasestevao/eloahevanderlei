@@ -5193,7 +5193,7 @@ body.loading #thumbs .thumb {
 @media screen and (max-width: 1680px) {
   /* line 139, ../sass/custom/_geral.scss */
   #two > .inner {
-    width: 85%;
+    width: 82%;
   }
 }
 @media screen and (max-width: 1280px) {
@@ -5210,10 +5210,16 @@ body.loading #thumbs .thumb {
   }
 }
 /* line 154, ../sass/custom/_geral.scss */
+#two .owl-controls.clickable {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+}
+/* line 159, ../sass/custom/_geral.scss */
 #two #thumbs {
   width: 100%;
 }
-/* line 156, ../sass/custom/_geral.scss */
+/* line 161, ../sass/custom/_geral.scss */
 #two #thumbs .item {
   width: 200px;
   height: 200px;
@@ -5221,32 +5227,32 @@ body.loading #thumbs .thumb {
   margin: 10px;
 }
 @media screen and (max-width: 1680px) {
-  /* line 156, ../sass/custom/_geral.scss */
+  /* line 161, ../sass/custom/_geral.scss */
   #two #thumbs .item {
     width: 150px;
     height: 150px;
   }
 }
 @media screen and (max-width: 1280px) {
-  /* line 156, ../sass/custom/_geral.scss */
+  /* line 161, ../sass/custom/_geral.scss */
   #two #thumbs .item {
     width: 140px;
     height: 140px;
   }
 }
 @media screen and (max-width: 980px) {
-  /* line 156, ../sass/custom/_geral.scss */
+  /* line 161, ../sass/custom/_geral.scss */
   #two #thumbs .item {
     width: 120px;
     height: 120px;
   }
 }
 
-/* line 176, ../sass/custom/_geral.scss */
+/* line 181, ../sass/custom/_geral.scss */
 #five {
   margin-bottom: 45px;
 }
-/* line 181, ../sass/custom/_geral.scss */
+/* line 186, ../sass/custom/_geral.scss */
 #five:before {
   background-image: url("images/escrevapragente.jpg");
   background-position: center center;
@@ -5263,7 +5269,7 @@ body.loading #thumbs .thumb {
   height: 480px;
 }
 @media screen and (max-width: 1680px) {
-  /* line 181, ../sass/custom/_geral.scss */
+  /* line 186, ../sass/custom/_geral.scss */
   #five:before {
     top: 200px;
     width: 640px;
@@ -5271,7 +5277,7 @@ body.loading #thumbs .thumb {
   }
 }
 @media screen and (max-width: 1280px) {
-  /* line 181, ../sass/custom/_geral.scss */
+  /* line 186, ../sass/custom/_geral.scss */
   #five:before {
     top: 180px;
     width: 100%;
@@ -5279,31 +5285,31 @@ body.loading #thumbs .thumb {
   }
 }
 @media screen and (max-width: 980px) {
-  /* line 181, ../sass/custom/_geral.scss */
+  /* line 186, ../sass/custom/_geral.scss */
   #five:before {
     width: 100%;
     left: 0;
     top: 0;
   }
 }
-/* line 216, ../sass/custom/_geral.scss */
+/* line 221, ../sass/custom/_geral.scss */
 #five > .inner {
   position: relative;
   padding: 4em 4em 2em 4em ;
 }
 @media screen and (max-width: 1680px) {
-  /* line 216, ../sass/custom/_geral.scss */
+  /* line 221, ../sass/custom/_geral.scss */
   #five > .inner {
     padding: 3em 3em 1em 3em ;
   }
 }
 @media screen and (max-width: 736px) {
-  /* line 216, ../sass/custom/_geral.scss */
+  /* line 221, ../sass/custom/_geral.scss */
   #five > .inner {
     padding: 2em 1em 0.1em 1em ;
   }
 }
-/* line 230, ../sass/custom/_geral.scss */
+/* line 235, ../sass/custom/_geral.scss */
 #five > .inner section {
   position: relative;
   top: -4px;
@@ -5311,7 +5317,7 @@ body.loading #thumbs .thumb {
   width: 620px;
 }
 @media screen and (max-width: 1680px) {
-  /* line 230, ../sass/custom/_geral.scss */
+  /* line 235, ../sass/custom/_geral.scss */
   #five > .inner section {
     top: -4px;
     width: 580px;
@@ -5319,46 +5325,46 @@ body.loading #thumbs .thumb {
   }
 }
 @media screen and (max-width: 1280px) {
-  /* line 230, ../sass/custom/_geral.scss */
+  /* line 235, ../sass/custom/_geral.scss */
   #five > .inner section {
     top: 40px;
     width: 100%;
     left: 0;
   }
 }
-/* line 248, ../sass/custom/_geral.scss */
+/* line 253, ../sass/custom/_geral.scss */
 #five .button {
   left: -36px;
   background-color: #009d97;
 }
 @media screen and (max-width: 1680px) {
-  /* line 248, ../sass/custom/_geral.scss */
+  /* line 253, ../sass/custom/_geral.scss */
   #five .button {
     left: -40px;
   }
 }
 @media screen and (max-width: 1280px) {
-  /* line 248, ../sass/custom/_geral.scss */
+  /* line 253, ../sass/custom/_geral.scss */
   #five .button {
     text-align: center;
   }
 }
 
-/* line 260, ../sass/custom/_geral.scss */
+/* line 265, ../sass/custom/_geral.scss */
 #player {
   position: fixed;
   bottom: 1em;
   margin: 0;
 }
 @media screen and (max-width: 1680px) {
-  /* line 260, ../sass/custom/_geral.scss */
+  /* line 265, ../sass/custom/_geral.scss */
   #player {
     bottom: 1em;
     margin: 7px;
   }
 }
 @media screen and (max-width: 1280px) {
-  /* line 260, ../sass/custom/_geral.scss */
+  /* line 265, ../sass/custom/_geral.scss */
   #player {
     top: 0;
     right: 0;
@@ -5367,12 +5373,12 @@ body.loading #thumbs .thumb {
   }
 }
 @media screen and (max-width: 980px) {
-  /* line 260, ../sass/custom/_geral.scss */
+  /* line 265, ../sass/custom/_geral.scss */
   #player {
     display: none;
   }
 }
-/* line 281, ../sass/custom/_geral.scss */
+/* line 286, ../sass/custom/_geral.scss */
 #player span {
   font-size: 1.5em;
   width: 45px;
@@ -5387,31 +5393,31 @@ body.loading #thumbs .thumb {
   -ms-transition: opacity 0.2s ease, -ms-transform 0.2s ease;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
-/* line 296, ../sass/custom/_geral.scss */
+/* line 301, ../sass/custom/_geral.scss */
 #player span.play {
   background-image: url("../img/play.png");
   color: transparent;
 }
-/* line 299, ../sass/custom/_geral.scss */
+/* line 304, ../sass/custom/_geral.scss */
 #player span.play.pause {
   background-image: url("../img/pause.png");
 }
 
-/* line 306, ../sass/custom/_geral.scss */
+/* line 311, ../sass/custom/_geral.scss */
 #footer {
   padding: 0;
   color: #009d97;
   text-align: center;
 }
-/* line 310, ../sass/custom/_geral.scss */
+/* line 315, ../sass/custom/_geral.scss */
 #footer #counter {
   padding: 40px 0px 10px;
 }
-/* line 312, ../sass/custom/_geral.scss */
+/* line 317, ../sass/custom/_geral.scss */
 #footer #counter button {
   background-color: #ed1b2f;
 }
-/* line 316, ../sass/custom/_geral.scss */
+/* line 321, ../sass/custom/_geral.scss */
 #footer #mm {
   padding: 1em 0em 0.5em;
   font-size: 0.7em;

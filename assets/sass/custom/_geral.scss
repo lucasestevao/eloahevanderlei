@@ -140,7 +140,7 @@
 		width: 90%;
 		margin-left: _size(sidebar-width);
 		@include breakpoint(xlarge) {
-			width: 85%;
+			width: 82%;
 		}
 		@include breakpoint(large) {
 			width: 85%;
@@ -150,6 +150,11 @@
 			margin-left: 0;
 		}
 
+	}
+	.owl-controls.clickable{
+		position: absolute;
+		top: 60px;
+		width: 100%;
 	}
 	#thumbs{
 		width: 100%;

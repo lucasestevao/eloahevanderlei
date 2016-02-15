@@ -387,7 +387,9 @@
 				itemsTablet: [736,3],
 				itemsMobile : false,
 				pagination : false,
-				navigation : true
+				navigation : true,
+				navigationText : ["<<",">>"],
+				autoHeight : true
 			});
 
 			// Custom Navigation Events
