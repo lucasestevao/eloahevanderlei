@@ -205,7 +205,7 @@
 						}
 					});
 		// Gallery.
-			var $gallery = $('#main');
+			var $gallery = $('#thumbs');
 
 			// Thumbs.
 				$gallery.children('.thumb').each(function() {

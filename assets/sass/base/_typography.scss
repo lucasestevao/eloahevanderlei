@@ -56,6 +56,9 @@
 
 	h1, h2, h3, h4, h5, h6 {
 		color: _palette(fg-bold);
+		.alt &{
+			color: _palette(accent1);
+		}
 		font-weight: _font(weight-bold);
 		line-height: 1.5;
 		margin: 0 0 (_size(element-margin) * 0.25) 0;
@@ -63,6 +66,10 @@
 		a {
 			color: inherit;
 			text-decoration: none;
+		}
+
+		small {
+			font-size: 0.5em;
 		}
 	}
 

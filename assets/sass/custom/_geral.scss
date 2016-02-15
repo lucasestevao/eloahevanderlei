@@ -1,3 +1,120 @@
-.logo {
-    position: relative;
+.logo{
+	position: relative;
+}
+
+.lojas{
+	opacity: 0.5;
+	padding: 15px;
+	&:hover{
+		opacity: 1;
+	}
+	@include vendor('transition', (
+		'opacity 0.5s ease-in-out'
+	));
+	@include breakpoint(large) {
+		padding: 0;
+	}
+}
+
+.image{
+	&.cover{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		height: 100%;
+		width: 100%;
+		img{
+			flex-shrink: 0;
+			min-width: 100%;
+			min-height: 100%;
+		}
+	}
+}
+
+#one{
+	color: _palette(fg-dark);
+	margin-top: 45px;
+	margin-bottom: 45px;
+
+	#wrapper &{
+		padding-left: 0;
+	}
+	.bloco{
+		width: 60%;
+		overflow: hidden;
+		.wrapper{
+			> .inner {
+				@include padding(4em, 4em);
+
+				@include breakpoint(xlarge) {
+					@include padding(3em, 3em);
+				}
+
+				@include breakpoint(small) {
+					@include padding(2em, 1em);
+				}
+			}
+			padding-left: _size(sidebar-width);
+			@include breakpoint(large) {
+				padding-left: 0;
+			}
+			&:before{
+				background-image: url('images/sobrenos-multiply.jpg');
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-clip: content-box;
+				text-align: center;
+
+				content: '';
+				display: block;
+				position: absolute;
+				left: 96.6666%;
+				top: -45px;
+				width: 70%;
+				height: 100%;
+
+				@include breakpoint(medium) {
+					opacity: 0.1;
+					z-index: 0;
+					width: 100%;
+					left: 0;
+					top: 0;
+					border-bottom: none;
+				}
+			}
+
+		}
+		margin-top: 85px;
+		@include breakpoint(medium) {
+			width: 100%;
+			margin: 0;
+		}
+		&:after{
+			background-image: url('images/sobrenos.jpg');
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-clip: content-box;
+			text-align: center;
+
+			content: '';
+			display: block;
+			position: absolute;
+			right: 0;
+			top: -45px;
+			width: 42%;
+			height: 100%;
+			z-index: -1;
+
+			@include breakpoint(medium) {
+				z-index: 0;
+				width: 100%;
+				left: 0;
+				top: 0;
+			}
+		}
+
+	}
 }

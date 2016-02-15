@@ -41,6 +41,9 @@
 
 		&.style2 {
 			background-color: _palette(accent2);
+			&.transparent{
+				background-color: rgba(_palette(accent2), 0.9);
+			}
 		}
 
 		&.style2-alt {
