@@ -375,8 +375,28 @@
 					playPause(1);
 				});
 			}
-
 			initializePlayer();
+
+		// Sliders.
+			var owl = $("#thumbs");
+
+			owl.owlCarousel({
+				items : 6,
+				itemsDesktop : [1280,5],
+				itemsDesktopSmall : [980,4],
+				itemsTablet: [736,3],
+				itemsMobile : false,
+				pagination : false,
+				navigation : true
+			});
+
+			// Custom Navigation Events
+			owl.find(".next").click(function(){
+				owl.trigger('owl.next');
+			});
+			owl.find(".prev").click(function(){
+				owl.trigger('owl.prev');
+			});
 	});
 
 })(jQuery);
