@@ -7,7 +7,7 @@
 /* Sidebar */
 
 	#sidebar {
-		@include padding(2.5em, 2.5em);
+		@include padding(2.5em, 1.5em);
 		background: _palette(bg);
 		cursor: default;
 		height: 100vh;
@@ -19,11 +19,14 @@
 		top: 0;
 		width: _size(sidebar-width);
 		z-index: _misc(z-index-base);
+		color: _palette(accent1);
 
 		> .inner {
 			@include vendor('display', 'flex');
 			@include vendor('flex-direction', 'column');
-			@include vendor('justify-content', 'center');
+			@include breakpoint(large) {
+				@include vendor('justify-content', 'center');
+			}
 			@include vendor('transform', 'translateY(0)');
 			@include vendor('transition', (
 				'opacity #{_duration(activation)} ease',
@@ -115,7 +118,11 @@
 
 				&.logo {
 					text-align: center;
-
+					padding-top: 2.5em;
+					padding-bottom: 2em;
+					@include breakpoint(large) {
+						padding-top: 0;
+					}
 					&:before,
 					&:after {
 						display: none;

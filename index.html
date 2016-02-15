@@ -32,6 +32,38 @@
 						</ul>
 					</nav>
 				</div>
+				<ul id="playlist" class="hidden actions">
+					<li>
+						<audio preload="auto">
+							<source src="music/01.mp3">
+						</audio>
+					</li>
+					<li>
+						<audio preload="auto">
+							<source src="music/02.mp3">
+						</audio>
+					</li>
+					<li>
+						<audio preload="auto">
+							<source src="music/03.mp3">
+						</audio>
+					</li>
+					<li>
+						<audio preload="auto">
+							<source src="music/04.mp3">
+						</audio>
+					</li>
+					<li>
+						<audio preload="auto">
+							<source src="music/05.mp3">
+						</audio>
+					</li>
+				</ul>
+				<div id="player" class="actions">
+					<span class="prev"> < </span>
+					<span class="play"> = </span>
+					<span class="next"> > </span>
+				</div>
 			</section>
 
 		<!-- Wrapper -->
@@ -54,7 +86,7 @@
 						<div class="bloco">
 							<section class="wrapper style2 transparent">
 								<div class="inner">
-									<h2>sobre nós</h2>
+									<h1>sobre nós</h1>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel felis arcu. Sed convallis libero sed felis aliquam, nec volutpat lorem rutrum. Quisque euismod sem ac quam imperdiet ullamcorper. Quisque ac pellentesque magna, in fringilla lorem. Donec vulputate feugiat mauris ullamcorper laoreet. Integer accumsan arcu non neque tempor fringilla. Duis varius turpis sed est vehicula sodales. Phasellus commodo leo et felis sodales, ut ornare eros consequat. Nulla nibh est, rhoncus quis feugiat sit amet, malesuada at metus. Donec aliquet tellus sed arcu laoreet egestas. Quisque pellentesque, purus id imperdiet vulputate, risus nulla molestie dolor, sit amet vestibulum massa lectus sit amet sem. Duis at euismod nisl. Pellentesque in sem sed tellus maximus varius. Aenean vitae faucibus lorem.</p>
 								</div>
 							</section>
@@ -64,7 +96,7 @@
 				<!-- Two -->
 					<section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
-							<h2>galeria <small>fotos</small></h2>
+							<h1>galeria <small>fotos</small></h1>
 						<!-- Thumbs -->
 							<section id="thumbs">
 								<article class="thumb">
@@ -169,7 +201,7 @@
 								</article>
 							</section>
 							<section class="video">
-								<iframe width="640" height="360" src="https://www.youtube.com/embed/iTwK9CKeX6A?rel=0" frameborder="0" allowfullscreen></iframe>
+								<iframe width="640" height="360" src="https://www.youtube.com/v/iTwK9CKeX6A?rel=0" frameborder="0" allowfullscreen></iframe>
 							</section>
 						</div>
 					</section>
@@ -177,7 +209,7 @@
 				<!-- Three -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
-							<h2>lista de presentes</h2>
+							<h1>lista de presentes</h1>
 							<ul class="actions fit">
 								<li>
 									<a href="http://listadecasamento.fastshop.com.br/ListaCasamento/ListaCasamentoProdutos.aspx?ID=173210"
@@ -226,42 +258,48 @@
 				<!-- Four -->
 					<section id="four" class="wrapper alt fade-up">
 						<div class="inner">
-							<h2>#eloahevanderlei</h2>
+							<h1>#eloahevanderlei</h1>
 						</div>
 					</section>
 
 				<!-- Five -->
 					<section id="five" class="wrapper style2 fade-up">
 						<div class="inner">
-							<h2>escreva pra gente :)</h2>
-							<div class="style1">
-								<section>
-									<form method="post" action="#">
-										<div class="field">
-											<input type="text" name="name" id="name" placeholder="nome" />
-										</div>
-										<div class="field">
-											<input type="text" name="email" id="email" placeholder="email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" rows="5" placeholder="mensagem"></textarea>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">enviar</a></li>
-										</ul>
-									</form>
-								</section>
-							</div>
+							<h1>escreva pra gente :)</h1>
+							<section>
+								<form method="post" action="#">
+									<div class="field">
+										<input type="text" name="name" id="name" placeholder="nome" />
+									</div>
+									<div class="field">
+										<input type="text" name="email" id="email" placeholder="email" />
+									</div>
+									<div class="field">
+										<textarea name="message" id="message" rows="5" placeholder="mensagem"></textarea>
+									</div>
+									<ul class="actions">
+										<li><a href="" class="button submit">enviar</a></li>
+									</ul>
+								</form>
+							</section>
 						</div>
 					</section>
 			</div>
 
 		<!-- Footer -->
-			<footer id="footer" class="wrapper style3">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Eloah & Vanderlei. All rights reserved.</li><li>by <a href="http://monkeymob.com.br">MonkeyMob</a></li>
-					</ul>
+			<footer id="footer" class="wrapper">
+				<div id="counter" class="actions">
+					<button class="big">
+						faltam <span class="days"></span> dias
+					</button>
+					<section class="timer hidden">
+						<span class="hours"></span> horas,
+						<span class="minutes"></span> minutos e
+						<span class="seconds"></span> segundos
+					</section>
+				</div>
+				<div id="mm">
+					<small>By <a href="http://monkeymob.com.br">MonkeyMob</a></small>
 				</div>
 			</footer>
 

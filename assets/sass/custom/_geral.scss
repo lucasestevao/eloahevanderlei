@@ -1,3 +1,7 @@
+.hidden{
+	display: none;
+}
+
 .logo{
 	position: relative;
 }
@@ -109,12 +113,122 @@
 			z-index: -1;
 
 			@include breakpoint(medium) {
-				z-index: 0;
 				width: 100%;
 				left: 0;
 				top: 0;
 			}
 		}
 
+	}
+}
+
+#five{
+	margin-bottom: 45px;
+	#wrapper &{
+		//padding-left: 0;
+	}
+	&:before{
+			background-image: url('images/escrevapragente.jpg');
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-clip: content-box;
+			text-align: center;
+
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 200px;
+			width: 45%;
+			height: 80%;
+
+			@include breakpoint(medium) {
+				width: 100%;
+				left: 0;
+				top: 0;
+			}
+
+	}
+	> .inner {
+		position: relative;
+		width: 100%;
+		padding-left: 45%;
+
+		@include padding(4em, 4em);
+
+		@include breakpoint(xlarge) {
+			@include padding(3em, 3em);
+		}
+
+		@include breakpoint(small) {
+			@include padding(2em, 1em);
+		}
+	}
+	.button{
+		left: 0px;
+	}
+}
+
+#player{
+	position: fixed;
+	bottom: 1em;
+	margin: 0;
+
+	@include breakpoint(xlarge) {
+		bottom: 1em;
+		margin: 5px;
+	}
+	@include breakpoint(large) {
+		top: 0;
+		right: 0;
+		bottom: initial;
+	}
+	@include breakpoint(medium) {
+		//TODO
+		display: none;
+	}
+
+	span{
+		font-size: 1.5em;
+		width: 45px;
+		height: 45px;
+		display: inline-block;
+		background-position: center center;
+		background-repeat: no-repeat;
+		text-align: center;
+		cursor: pointer;
+
+		@include vendor('transition', (
+			'opacity #{_duration(transition)} ease',
+			'transform #{_duration(transition)} ease'
+		));
+
+		&.play{
+			background-image: url('../img/play.png');
+			color: transparent;
+			&.pause{
+				background-image: url('../img/pause.png');
+			}
+		}
+	}
+}
+
+#footer{
+	padding: 0;
+	color: _palette(accent3);
+	text-align: center;
+	#counter{
+		padding: 40px 0px 10px;
+		button{
+			background-color: _palette(accent1);
+		}
+	}
+	#mm{
+		padding: 1em 0em 0.5em;
+		font-size: 0.7em;
+		border-bottom: 10px solid _palette(accent3);
+		z-index: 10000;
+		position: relative;
 	}
 }

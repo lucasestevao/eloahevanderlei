@@ -286,6 +286,97 @@
 							$gallery[0]._poptrox.windowMargin = 0;
 						});
 
+		// Counter.
+			function getTimeRemaining(endtime) {
+				var t = Date.parse(endtime) - Date.parse(new Date());
+				var seconds = Math.floor((t / 1000) % 60);
+				var minutes = Math.floor((t / 1000 / 60) % 60);
+				var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+				var days = Math.floor(t / (1000 * 60 * 60 * 24));
+
+				return {
+					'total': t,
+					'days': days,
+					'hours': hours,
+					'minutes': minutes,
+					'seconds': seconds
+				};
+			}
+
+			function initializeClock(id, endtime) {
+				var clock = document.getElementById(id);
+				var daysSpan = clock.querySelector('.days');
+				var hoursSpan = clock.querySelector('.hours');
+				var minutesSpan = clock.querySelector('.minutes');
+				var secondsSpan = clock.querySelector('.seconds');
+
+				function updateClock() {
+					var t = getTimeRemaining(endtime);
+
+					daysSpan.innerHTML = t.days;
+					hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+					minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+					secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+					if (t.total <= 0) {
+						clearInterval(timeinterval);
+					}
+				}
+
+				updateClock();
+				var timeinterval = setInterval(updateClock, 1000);
+			}
+
+			var deadline = new Date(Date.parse(new Date('2016-07-20')));
+			initializeClock('counter', deadline);
+
+		// Player.
+			function initializePlayer(){
+				var player = $('#player'),
+					playlist = $('#playlist'),
+					tracks = playlist.find('li audio'),
+					length = tracks.length,
+					current = 0,
+					audio = tracks[0];
+
+				function playPause(offset){
+					if (tracks[current].paused) {
+						if (offset !== 0) {
+							current = (current + length + offset) % length;
+							tracks[current].load();
+						}
+						tracks[current].play();
+						player.find('.play').removeClass('pause');
+					} else {
+						tracks[current].pause();
+						if (offset !== 0) {
+							current = (current + length + offset) % length;
+							tracks[current].load();
+							tracks[current].play();
+						}else{
+							player.find('.play').addClass('pause');
+						}
+					}
+				}
+
+				for(var i = 0; i < length; i++) {
+					tracks[i].addEventListener('ended', function(e){
+						playPause(1);
+					});
+				}
+
+				player.find('.play').click(function(e){
+					playPause(0);
+				});
+				player.find('.prev').click(function(e){
+					playPause(-1);
+				});
+				player.find('.next').click(function(e){
+					playPause(1);
+				});
+			}
+
+			initializePlayer();
 	});
 
 })(jQuery);

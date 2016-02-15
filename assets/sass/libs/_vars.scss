@@ -53,7 +53,7 @@
 		border-width:		1px,
 		element-height:		2.75em,
 		element-margin:		2em,
-		sidebar-width:		16em,
+		sidebar-width:		12em,
 		sidebar-height:		3.5em,	// when <=large is active
 		inner-width:		75em,
 		header:				4em
@@ -61,10 +61,11 @@
 
 // Font.
 	$font: (
-		family:				(Arial, Helvetica, sans-serif),
+		family:				('RalewayRegular', Helvetica, sans-serif),
+		family-alt:			('ProximaNovaLight', Helvetica, sans-serif),
 		family-fixed:		('Courier New', monospace),
 		weight:				normal,
-		weight-bold:		bold,
+		weight-bold:		100,
 		kerning-alt:		0.25em
 	);
 
