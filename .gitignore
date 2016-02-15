@@ -1,2 +1,6 @@
 assets/.sass-cache
 assets/.sass-cache/*
+.sass-cache
+.temp
+build
+node_modules
