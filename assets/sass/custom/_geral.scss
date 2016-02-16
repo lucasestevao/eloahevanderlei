@@ -1,3 +1,16 @@
+body{
+	&.debug:before{
+		content: '';
+		display: block;
+		width: 100%;
+		background-image: url("../../site.png");
+		background-repeat: no-repeat;
+		position: absolute;
+		height: 6000px;
+		background-size: 100%;
+	}
+}
+
 .hidden{
 	display: none;
 }
@@ -126,29 +139,37 @@
 
 	#wrapper &{
 		padding-left: 0;
-		padding-right: 15%;
+		padding-right: 300px;
 		background-clip: content-box;
-	}
-	&:before{
-		display: block;
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 40px;
-		top: 180px;
-		background-color: _palette(accent2);
-	}
-	> .inner{
-		width: 90%;
-		margin-left: _size(sidebar-width);
+
 		@include breakpoint(xlarge) {
-			width: 82%;
+			padding-right: 210px;
 		}
 		@include breakpoint(large) {
-			width: 85%;
+			padding-right: 160px;
 		}
 		@include breakpoint(medium) {
-			width: 85%;
+			padding-right: 0px;
+		}
+	}
+	> .inner{
+		position: relative;
+		min-height: 700px;
+		margin-bottom: 260px;
+		margin-left: _size(sidebar-width);
+		border-bottom: 20px solid;
+		border-bottom-color: darken(mix(_palette(accent1), _palette(accent3), 50%), 50);
+		padding-right: 0;
+		background-color: _palette(accent3);
+
+		@include breakpoint(xlarge) {
+			width: 860px;
+		}
+		@include breakpoint(large) {
+			width: 760px;
+		}
+		@include breakpoint(medium) {
+			width: 100%;
 			margin-left: 0;
 		}
 
@@ -198,6 +219,25 @@
 	.video {
 		text-align: center;
 		height: 200px;
+	}
+	&:before{
+		background-color: _palette(accent2);
+		display: block;
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 40px;
+		top: 180px;
+	}
+	&:after{
+		background-color: _palette(accent1);
+		display: block;
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 40px;
+		bottom: -20px;
+		z-index: -1;
 	}
 }
 #four{

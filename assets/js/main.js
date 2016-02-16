@@ -434,6 +434,64 @@
 		});
 
 		feed.run();
+
+
+		// Debug Visual.
+		var siteOpacity = 1,
+			keys = [];
+
+		window.executeHotkeyTest = function(callback, keyValues) {
+			if (typeof callback !== 'function')
+				throw new TypeError('Expected callback as first argument');
+			if (typeof keyValues !== 'object' && (!Array.isArray || Array.isArray(keyValues)))
+				throw new TypeError('Expected array as second argument');
+
+			var allKeysValid = true;
+
+			for (var i = 0; i < keyValues.length; ++i)
+				allKeysValid = allKeysValid && keys[keyValues[i]];
+
+			if (allKeysValid)
+				callback();
+		};
+
+		window.addGlobalHotkey = function(callback, keyValues) {
+			if (typeof keyValues === 'number')
+				keyValues = [keyValues];
+
+			var fnc = function(cb, val) {
+				return function(e) {
+					keys[e.keyCode] = true;
+					executeHotkeyTest(cb, val);
+				};
+			}(callback, keyValues);
+			window.addEventListener('keydown', fnc);
+			return fnc;
+		};
+
+		window.addEventListener('keyup', function(e) {
+			keys[e.keyCode] = false;
+		});
+
+		addGlobalHotkey(function() {
+			//shift + d
+			$('body').addClass('debug');
+		}, [16, 68]);
+		addGlobalHotkey(function() {
+			//shift + up
+			siteOpacity += 0.1;
+			$('body').find('section').css({
+				opacity: siteOpacity
+			});
+		}, [16, 38]);
+		addGlobalHotkey(function() {
+			//shift + down
+			siteOpacity -= 0.1;
+			$('body').find('section').css({
+				opacity: siteOpacity
+			});
+		}, [16, 40]);
+
 	});
 
 })(jQuery);

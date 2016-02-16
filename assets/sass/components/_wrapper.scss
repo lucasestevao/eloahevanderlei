@@ -12,7 +12,7 @@
 		> .inner {
 			@include padding(3em, 5em);
 			max-width: 100%;
-			width: _size(inner-width);
+			//width: _size(inner-width);
 
 			@include breakpoint(xlarge) {
 				@include padding(3em, 4em);
