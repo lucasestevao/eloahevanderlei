@@ -133,7 +133,7 @@
 		position: absolute;
 		width: 100%;
 		height: 40px;
-		top: 260px;
+		top: 180px;
 		background-color: _palette(accent2);
 	}
 	> .inner{
@@ -158,13 +158,15 @@
 		height: 0; //estava impedindo o clique nas imagens
 	}
 	.owl-buttons {
-		margin-top: 95px;
+		margin-top: 12px;
 
 		.owl-prev {
 			float: left;
+			margin-left: -25px;
 		}
 		.owl-next {
 			float: right;
+			margin-right: -25px;
 		}
 	}
 	#thumbs{
@@ -327,6 +329,7 @@
 		padding: 40px 0px 10px;
 		button{
 			background-color: _palette(accent1);
+			cursor: default;
 		}
 	}
 	#mm{

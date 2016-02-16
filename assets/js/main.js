@@ -51,7 +51,7 @@
 
 		});
 
-		// Prioritize "important" elements on medium.
+		// Prioritize 'important' elements on medium.
 		skel.on('+medium -medium', function() {
 			$.prioritize(
 				'.important\\28 medium\\29',
@@ -111,7 +111,7 @@
 							$section.removeClass('inactive');
 
 							// No locked links? Deactivate all links and activate this section's one.
-							if ($sidebar_a.filter('.active-locked').length == 0) {
+							if ($sidebar_a.filter('.active-locked').length === 0) {
 
 								$sidebar_a.removeClass('active');
 								$this.addClass('active');
@@ -174,7 +174,7 @@
 				$image.css('background-image', 'url(' + $img.attr('src') + ')');
 
 				// Set background position.
-				if (x = $img.data('position'))
+				if (x == $img.data('position'))
 					$image.css('background-position', x);
 
 				// Hide <img>.
@@ -214,18 +214,18 @@
 				x;
 
 			// No image? Bail.
-			if ($image.length == 0)
+			if ($image.length === 0)
 				return;
 
 			// Image.
-			// This sets the background of the "image" <span> to the image pointed to by its child
+			// This sets the background of the 'image' <span> to the image pointed to by its child
 			// <img> (which is then hidden). Gives us way more flexibility.
 
 			// Set background.
 			$image.css('background-image', 'url(' + $image_img.attr('src') + ')');
 
 			// Set background position.
-			if (x = $image_img.data('position'))
+			if (x == $image_img.data('position'))
 				$image.css('background-position', x);
 
 			// Hide original img.
@@ -330,7 +330,7 @@
 			var timeinterval = setInterval(updateClock, 1000);
 		}
 
-		var deadline = new Date(Date.parse(new Date('2016-07-20')));
+		var deadline = new Date(Date.parse(new Date('2016-07-30')));
 		initializeClock('counter', deadline);
 
 		// Player.
@@ -349,7 +349,7 @@
 						tracks[current].load();
 					}
 					tracks[current].play();
-					player.find('.play').removeClass('pause');
+					player.find('.play').addClass('pause');
 				} else {
 					tracks[current].pause();
 					if (offset !== 0) {
@@ -357,15 +357,17 @@
 						tracks[current].load();
 						tracks[current].play();
 					} else {
-						player.find('.play').addClass('pause');
+						player.find('.play').removeClass('pause');
 					}
 				}
 			}
 
+			function callPlayPause() {
+				playPause(1);
+			}
+
 			for (var i = 0; i < length; i++) {
-				tracks[i].addEventListener('ended', function(e) {
-					playPause(1);
-				});
+				tracks[i].addEventListener('ended', callPlayPause);
 			}
 
 			player.find('.play').click(function(e) {
@@ -381,7 +383,7 @@
 		initializePlayer();
 
 		// Sliders.
-		var owl = $("#thumbs");
+		var owl = $('#thumbs');
 
 		owl.owlCarousel({
 			items: 6,
@@ -391,17 +393,25 @@
 			itemsMobile: false,
 			pagination: false,
 			navigation: true,
-			navigationText: ["<<", ">>"],
+			navigationText: ['<<', '>>'],
 			autoHeight: true
 		});
 
 		// Custom Navigation Events
-		owl.find(".next").click(function() {
+		owl.find('.next').click(function() {
 			owl.trigger('owl.next');
 		});
-		owl.find(".prev").click(function() {
+		owl.find('.prev').click(function() {
 			owl.trigger('owl.prev');
 		});
+
+		var feed = new Instafeed({
+			get: 'tagged',
+			tagName: 'eloahevanderlei',
+			clientId: '5265b3280ea54a759ab98f2634697821'
+		});
+
+		feed.run();
 	});
 
 })(jQuery);

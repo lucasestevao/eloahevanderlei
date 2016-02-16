@@ -5,8 +5,8 @@ module.exports = function(grunt) {
 		watch: {
 			css: {
 				files: [
-					'assets/sass/*.sass',
-					'assets/sass/*.scss'
+					'assets/sass/**/*.sass',
+					'assets/sass/**/*.scss'
 				],
 				tasks: ['compass']
 			},
@@ -15,7 +15,13 @@ module.exports = function(grunt) {
 					'assets/js/main.js',
 					'Gruntfile.js'
 				],
-				tasks: ['jshint']
+				tasks: ['js']
+			},
+			html: {
+				files: [
+					'index-dev.html'
+				],
+				tasks: ['htmlmin']
 			}
 		},
 		compass: {
@@ -43,6 +49,7 @@ module.exports = function(grunt) {
 					'assets/js/owl.carousel.min.js',
 					'assets/js/skel.min.js',
 					'assets/js/util.js',
+					'assets/js/instafeed.min.js',
 					'assets/js/main.js'
 				],
 				dest: '.temp/js/main.js'
@@ -80,10 +87,10 @@ module.exports = function(grunt) {
 					optimizationLevel: 1
 				},
 				files: [{
-					expand: true,						// Enable dynamic expansion
-					cwd: 'assets/stylesheets/images',	// Src matches are relative to this path
-					src: ['**/*.{png,jpg,gif,svg}'],		// Actual patterns to match
-					dest: 'build/css/images'			// Destination path prefix
+					expand: true, // Enable dynamic expansion
+					cwd: 'assets/stylesheets/images', // Src matches are relative to this path
+					src: ['**/*.{png,jpg,gif,svg}'], // Actual patterns to match
+					dest: 'build/css/images' // Destination path prefix
 				}]
 			},
 			dynamic: {
@@ -112,16 +119,14 @@ module.exports = function(grunt) {
 		clean: ['build/', '.temp'],
 		copy: {
 			fonts: {
-				files: [
-					{
-						expand: true,
-						cwd: 'assets/',
-						src: ['fonts/*'],
-						dest: 'build/fonts',
-						filter: 'isFile',
-						flatten: true
-					}
-				]
+				files: [{
+					expand: true,
+					cwd: 'assets/',
+					src: ['fonts/*'],
+					dest: 'build/fonts',
+					filter: 'isFile',
+					flatten: true
+				}]
 			}
 		}
 	});
@@ -140,6 +145,5 @@ module.exports = function(grunt) {
 
 	// Register the default tasks.
 	grunt.registerTask('default', ['clean', 'copy', 'compass', 'htmlmin', 'concat', 'uglify', 'imagemin']);
-
-	grunt.registerTask('watch', ['jsbeautifier', 'jshint', 'compass', 'watch']);
+	grunt.registerTask('js', ['jsbeautifier', 'jshint', 'concat', 'uglify', 'concat', 'uglify']);
 };

@@ -1,7 +1,7 @@
 {
   "name": "eloahevanderlei",
   "version": "1.0.0",
-  "description": "Wedding web site for Eloah & vanderlei, developed by Monkey Mob.",
+  "description": "Wedding web site for Eloah & Vanderlei, developed by Monkey Mob.",
   "main": "app.js",
   "dependencies": {},
   "devDependencies": {
