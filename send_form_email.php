@@ -1,5 +1,5 @@
 <?php
-	$email_to = 'lucas@monkeymob.com.br';
+	$email_to = 'eloahevanderlei@gmail.com';
 	$email_subject = '[ELOAH&VANDERLEI] Mensagem via site';
 	$return = $_POST;
 
