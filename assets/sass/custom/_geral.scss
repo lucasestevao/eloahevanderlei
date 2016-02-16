@@ -428,3 +428,15 @@ body{
 		position: relative;
 	}
 }
+
+span.error {
+	display: none;
+}
+
+.return-message.fail {
+	color: #ed1b2f;
+}
+
+.return-message{
+	color: #009d97;
+}

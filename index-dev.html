@@ -292,18 +292,19 @@
 						<div class="inner">
 							<h2>escreva pra gente :)</h2>
 							<section>
-								<form method="post" action="#">
-									<div class="field">
+								<form method="POST" action="send_form_email.php">
+									<span class="return-message"></span>
+									<div class="field name">
 										<input type="text" name="name" id="name" placeholder="nome" />
 									</div>
-									<div class="field">
-										<input type="text" name="email" id="email" placeholder="email" />
+									<div class="field email">
+										<input type="email" name="email" id="email" placeholder="email" />
 									</div>
-									<div class="field">
+									<div class="field message">
 										<textarea name="message" id="message" rows="5" placeholder="mensagem"></textarea>
 									</div>
 									<ul class="actions">
-										<li><a href="" class="button submit">enviar</a></li>
+										<li><a href="#" class="button submit">enviar</a></li>
 									</ul>
 								</form>
 							</section>

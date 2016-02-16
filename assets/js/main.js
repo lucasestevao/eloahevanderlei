@@ -36,19 +36,95 @@
 
 		// Forms.
 
+
+		function validateForm() {
+			var nameReg = /^[A-Za-z .'-çÇãáéíóúÁÉÍÓÚâêôÂÊÔàèìòùÀÈÌÒ]+$/;
+			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+			var name = $.trim($('#name').val());
+			var email = $.trim($('#email').val());
+			var message = $.trim($('#message').val());
+
+			var inputVal = new Array(name, email, message);
+
+			var inputMessage = new Array('nome', 'email', 'mensagem');
+			var valid = true;
+
+			$('.error').remove();
+			$('.return-message').html('');
+
+			if (inputVal[0] === '') {
+				$('#five .name').before('<span class="error"> Por favor, informe seu ' + inputMessage[0] + '</span>');
+				valid = false;
+			} else if (!nameReg.test(name)) {
+				$('#five .name').before('<span class="error"> Use apenas letras</span>');
+				valid = false;
+			}
+
+			if (inputVal[1] === '') {
+				$('#five .email').before('<span class="error"> Por favor, informe seu ' + inputMessage[1] + '</span>');
+				valid = false;
+			} else if (!emailReg.test(email)) {
+				$('#five .email').before('<span class="error"> Huuum... parece que seu email não é válido</span>');
+				valid = false;
+			}
+
+			if (inputVal[2] === '') {
+				$('#five .message').before('<span class="error"> Por favor, escreva uma ' + inputMessage[2] + '</span>');
+				valid = false;
+			}
+
+			if (!valid) {
+				$('.error').fadeIn();
+			}
+
+			return valid;
+		}
+
 		// Fix: Placeholder polyfill.
 		$('form').placeholder();
 
-		// Hack: Activate non-input submits.
-		$('form').on('click', '.submit', function(event) {
-
-			// Stop propagation, default.
-			event.stopPropagation();
+		$('form').on('submit', function(event) {
 			event.preventDefault();
+			event.stopPropagation();
 
-			// Submit form.
-			$(this).parents('form').submit();
+			var dados = $(this).serialize();
+			$('.return-message').html('').removeClass('fail');
 
+			$.ajax({
+				type: 'POST',
+				url: 'send_form_email.php',
+				data: dados,
+				success: function(data) {
+					if (data) {
+						var response = JSON.parse(data);
+
+						if (response.error) {
+							$('.return-message').addClass('fail').html(response.message);
+						} else {
+							$('.return-message').html(response.message);
+
+							$('#name').val('');
+							$('#email').val('');
+							$('#message').val('');
+						}
+					}
+				},
+				error: function(data) {
+					if (data) {
+						$('.return-message').addClass('fail').html(JSON.parse(data).message);
+					}
+				}
+			});
+		});
+
+		$('form').on('click', '.submit', function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+
+			if (validateForm()) {
+				$(this).parents('form').submit();
+			}
 		});
 
 		// Prioritize 'important' elements on medium.

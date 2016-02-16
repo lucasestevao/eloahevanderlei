@@ -50,12 +50,17 @@ module.exports = function(grunt) {
 					'assets/js/skel.min.js',
 					'assets/js/util.js',
 					'assets/js/instafeed.min.js',
+					'assets/js/validatinator.min.js',
 					'assets/js/main.js'
 				],
 				dest: '.temp/js/main.js'
 			}
 		},
 		uglify: {
+			options: {
+				beautify: true,
+				mangle: false
+			},
 			js: {
 				files: {
 					'build/js/main.min.js': ['.temp/js/main.js']
@@ -63,7 +68,7 @@ module.exports = function(grunt) {
 			}
 		},
 		jsbeautifier: {
-			files: ['Gruntfile.js', 'assets/js/main.js'],
+			files: ['Gruntfile.js', 'assets/js/main.js', 'send_form_email.php'],
 			options: {
 				js: {
 					indentSize: 1,
@@ -135,5 +140,5 @@ module.exports = function(grunt) {
 
 	// Register the default tasks.
 	grunt.registerTask('default', ['clean', 'copy', 'compass', 'htmlmin', 'concat', 'uglify', 'imagemin']);
-	grunt.registerTask('js', ['jsbeautifier', 'jshint', 'concat', 'uglify', 'concat', 'uglify']);
+	grunt.registerTask('js', ['jsbeautifier', 'jshint', 'concat', 'uglify']);
 };
