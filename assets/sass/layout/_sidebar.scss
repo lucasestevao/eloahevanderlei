@@ -84,10 +84,10 @@
 
 				&:before,
 				&:after {
-					border-radius: 0.2em;
+					border-radius: 0;
 					bottom: 0;
 					content: '';
-					height: 0.2em;
+					height: 1px;
 					position: absolute;
 					right: 0;
 					width: 100%;
