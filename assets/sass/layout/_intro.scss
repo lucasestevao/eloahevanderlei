@@ -14,19 +14,42 @@
 		background-size: cover;
 		text-align: center;
 
+		@include vendor('transition', (
+			'background #{_duration(header)} ease-in-out'
+		));
 		@include vendor('background-image', (
 			'linear-gradient(to left, rgba(31,34,36,0.35), rgba(31,34,36,0) 10em, rgba(31,34,36,0))',
 			'linear-gradient(to right, rgba(31,34,36,0.35), rgba(31,34,36,0) 10em, rgba(31,34,36,0))'
 		));
 
-		&.banner1{
+		&.banner0{
 			background-image: url('images/banner1.jpg');
 		}
-		&.banner2{
+		&.banner1{
 			background-image: url('images/banner2.jpg');
 		}
-		&.banner3{
+		&.banner2{
 			background-image: url('images/banner3.jpg');
+		}
+
+		#banner-nav {
+			position: absolute;
+			bottom: 1.7em;
+			margin-left: 5em;
+			span {
+				width: 1em;
+				height: 1em;
+				border-radius: 1em;
+				float: left;
+				margin: 0.5em;
+				background: _palette(bg);
+				@include vendor('transition', (
+					'background #{_duration(transition)} ease-in-out'
+				));
+				&.active{
+					background: _palette(accent1);
+				}
+			}
 		}
 
 		p {

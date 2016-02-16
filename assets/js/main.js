@@ -405,6 +405,27 @@
 			owl.trigger('owl.prev');
 		});
 
+		// Site Cover.
+		var index = 0,
+			bannerNav = $('#banner-nav').find('span');
+
+		function changeBackground(newIndex) {
+			$('#intro').removeClass('banner' + index);
+			index = newIndex;
+			$('#intro').addClass('banner' + newIndex);
+			$(bannerNav).removeClass('active');
+			$(bannerNav[index]).addClass('active');
+		}
+
+		$('#banner-nav').on('click', 'span', function(e) {
+			changeBackground($(this).index());
+		});
+
+		setInterval(function() {
+			changeBackground((index + 1) % bannerNav.length);
+		}, 5000);
+
+		// Instagram.
 		var feed = new Instafeed({
 			get: 'tagged',
 			tagName: 'eloahevanderlei',

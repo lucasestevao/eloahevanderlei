@@ -191,45 +191,65 @@
 		}
 	}
 }
+#four{
+	#instafeed {
+		width: 600px;
+		margin-left: 0;
+		@include breakpoint(large) {
+			margin: auto;
+		}
+		a {
+			border: 0;
+			margin: 0;
+			padding: 0;
+			height: 150px;
+			position: relative;
+			display: inline-block;
+			margin-bottom: -9px;
+			img{
+				display: block;
+			}
+		}
+	}
+}
 #five{
 	margin-bottom: 45px;
 	#wrapper &{
 		//padding-left: 0;
 	}
 	&:before{
-			background-image: url('images/escrevapragente.jpg');
-			background-position: center center;
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-clip: content-box;
-			text-align: center;
+		background-image: url('images/escrevapragente.jpg');
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-clip: content-box;
+		text-align: center;
 
-			content: '';
-			display: block;
-			position: absolute;
-			left: 0;
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 200px;
+		width: 720px;
+		height: 480px;
+
+		@include breakpoint(xlarge) {
 			top: 200px;
-			width: 720px;
+			width: 640px;
 			height: 480px;
+		}
 
-			@include breakpoint(xlarge) {
-				top: 200px;
-				width: 640px;
-				height: 480px;
-			}
+		@include breakpoint(large) {
+			top: 180px;
+			width: 100%;
+			opacity: 0.8;
+		}
 
-			@include breakpoint(large) {
-				top: 180px;
-				width: 100%;
-				opacity: 0.8;
-			}
-
-			@include breakpoint(medium) {
-				width: 100%;
-				left: 0;
-				top: 0;
-			}
-
+		@include breakpoint(medium) {
+			width: 100%;
+			left: 0;
+			top: 0;
+		}
 	}
 	> .inner {
 		position: relative;
