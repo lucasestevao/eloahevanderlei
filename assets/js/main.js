@@ -475,20 +475,20 @@
 
 		addGlobalHotkey(function() {
 			//shift + d
-			$('body').addClass('debug');
+			$('body').toggleClass('debug');
 		}, [16, 68]);
 		addGlobalHotkey(function() {
 			//shift + up
 			siteOpacity += 0.1;
 			$('body').find('section').css({
-				opacity: siteOpacity
+				opacity: siteOpacity > 1 ? 1 : siteOpacity
 			});
 		}, [16, 38]);
 		addGlobalHotkey(function() {
 			//shift + down
 			siteOpacity -= 0.1;
 			$('body').find('section').css({
-				opacity: siteOpacity
+				opacity: siteOpacity < 0 ? 0 : siteOpacity
 			});
 		}, [16, 40]);
 
