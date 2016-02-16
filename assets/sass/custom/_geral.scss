@@ -349,10 +349,11 @@ body{
 	@include vendor('flex-direction', 'row');
 	@include vendor('justify-content', 'center');
 
-	width: 100%;
-	position: relative;
-	bottom: 4.4em;
-	right: 5px;
+	width: _size(sidebar-width);
+	position: fixed;
+	bottom: 2.2em;
+	left: 0;
+	padding: 0em 0.75em 0em 0em;
 	opacity: 1;
 
 	@include breakpoint(xlarge) {

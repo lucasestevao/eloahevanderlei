@@ -34,14 +34,17 @@
 
 		#banner-nav {
 			position: absolute;
-			bottom: 1.7em;
-			margin-left: 5em;
+			bottom: 2.4em;
+			margin-left: 6em;
+			@include breakpoint(large) {
+				margin-left: 2.4em;
+			}
 			span {
-				width: 1em;
-				height: 1em;
-				border-radius: 1em;
+				width: 20px;
+				height: 20px;
+				border-radius: 20px;
 				float: left;
-				margin: 0.5em;
+				margin: 10px;
 				background: _palette(bg);
 				@include vendor('transition', (
 					'background #{_duration(transition)} ease-in-out'
@@ -49,6 +52,15 @@
 				&.active{
 					background: _palette(accent1);
 				}
+			}
+		}
+		h1{
+			position: relative;
+			top: 0.5em;
+			left: -1.75em;
+			@include breakpoint(large) {
+				top: inherit;
+				left: inherit;
 			}
 		}
 
