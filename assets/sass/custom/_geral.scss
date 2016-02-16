@@ -345,18 +345,20 @@ body{
 }
 
 #player{
-	position: fixed;
-	bottom: 1em;
-	margin: 0;
+	@include vendor('display', 'flex');
+	@include vendor('flex-direction', 'row');
+	@include vendor('justify-content', 'center');
+
+	width: 100%;
+	position: relative;
+	bottom: 4.4em;
+	right: 5px;
+	opacity: 1;
 
 	@include breakpoint(xlarge) {
-		bottom: 1em;
-		margin: 7px;
+		//TODO
 	}
 	@include breakpoint(large) {
-		top: 0;
-		right: 0;
-		bottom: initial;
 		//TODO
 		display: none;
 	}
@@ -376,8 +378,7 @@ body{
 		cursor: pointer;
 
 		@include vendor('transition', (
-			'opacity #{_duration(transition)} ease',
-			'transform #{_duration(transition)} ease'
+			'background #{_duration(transition)} ease-in-out'
 		));
 
 		&.play{
