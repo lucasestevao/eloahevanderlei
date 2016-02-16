@@ -53,16 +53,6 @@ module.exports = function(grunt) {
 					'assets/js/main.js'
 				],
 				dest: '.temp/js/main.js'
-			},
-			css: {
-				src: [
-					'assets/stylesheets/font-awesome.min',
-					'assets/stylesheets/ProximaNovaLight',
-					'assets/stylesheets/RalewayRegular',
-					'assets/stylesheets/owl.carousel',
-					'assets/stylesheets/owl.transitions'
-				],
-				dest: 'build/css/main.min.css'
 			}
 		},
 		uglify: {
