@@ -408,7 +408,8 @@
 		var feed = new Instafeed({
 			get: 'tagged',
 			tagName: 'eloahevanderlei',
-			clientId: '5265b3280ea54a759ab98f2634697821'
+			clientId: 'fd88310566744275a3d68092d9c175d1',
+			template: '<a href="{{link}}" target="_blank"><img src="{{image}}" alt="{{caption}}" title="{{caption}}" /></a>'
 		});
 
 		feed.run();
