@@ -37,7 +37,7 @@ body{
 
 #one{
 	color: _palette(fg-dark);
-	padding-top: 90px;
+	padding-top: 5.625em;
 	p{
 		margin-bottom: 1.75em;
 	}
@@ -51,15 +51,14 @@ body{
 			> .inner {
 				padding: 3em 7em;
 
-				@include breakpoint(xlarge) {
-					@include padding(3em, 3em);
-				}
-
 				@include breakpoint(small) {
 					@include padding(2em, 1em);
 				}
 			}
 			padding-left: _size(sidebar-width);
+			@include breakpoint(xlarge) {
+				// padding-left: (_size(sidebar-width) * 0.75);
+			}
 			@include breakpoint(large) {
 				padding-left: 0;
 			}
@@ -75,7 +74,7 @@ body{
 				display: block;
 				position: absolute;
 				left: 96.45%;
-				top: -45px;
+				top: -2.8125em;
 				width: 82.1429%;
 				height: 100%;
 
@@ -106,7 +105,7 @@ body{
 			display: block;
 			position: absolute;
 			right: 0;
-			top: -45px;
+			top: -2.8125em;
 			width: 46%;
 			height: 100%;
 			z-index: -1;
@@ -121,8 +120,8 @@ body{
 	}
 }
 #two{
-	padding-top: 45px;
-	padding-bottom: 280px;
+	padding-top: 2.8125em;
+	padding-bottom: 17.4999em;
 	position: relative;
 
 	#wrapper &{
@@ -137,16 +136,16 @@ body{
 	}
 	.bloco{
 		.wrapper{
-			border-bottom: 20px solid;
+			border-bottom: 1.25em solid;
 			border-bottom-color: darken(mix(_palette(accent1), _palette(accent3), 50%), 50);
-			height: 720px;
-			width: 1635px;
+			height: 45em;
+			width: 102.1875em;
 			@include breakpoint(xlarge) {
-				height: 720px;
-				width: 1200px;
+				height: 45em;
+				width: 102.1875em;
 			}
 			@include breakpoint(large) {
-				height: 720px;
+				height: 45em;
 				width: 100%;
 			}
 
@@ -155,6 +154,7 @@ body{
 				z-index: 2;
 				margin-left: _size(sidebar-width);
 				@include breakpoint(xlarge) {
+					// margin-left: (_size(sidebar-width) * 0.75);
 				}
 				@include breakpoint(large) {
 					width: 100%;
@@ -176,45 +176,46 @@ body{
 			letter-spacing: 0.2em;
 			font-weight: 100;
 			position: absolute;
-			top: -100px;
+			top: -3.2em;
 			font-size: 2em;
 		}
 		.owl-prev {
-			left: -60px;
+			left: -1.875em;
 		}
 		.owl-next {
-			right: -60px;
+			right: -1.875em;
 		}
 	}
 	#thumbs{
-		width: 1050px;
+		width: 65.625em;
 		margin: 3.75em auto 2em;
 		.item{
-			width: 150px;
-			height: 150px;
+			width: 9.375em;
+			height: 9.375em;
 			text-align: center;
 			margin: auto;
 			@include breakpoint(xlarge) {
-				width: 150px;
-				height: 150px;
+				width: 9.375em;
+				height: 9.375em;
 			}
 			@include breakpoint(large) {
-				width: 140px;
-				height: 140px;
+				width: 9.375em;
+				height: 9.375em;
 			}
 			@include breakpoint(medium) {
-				width: 120px;
-				height: 120px;
+				width: 9.375em;
+				height: 9.375em;
 			}
 		}
 	}
 	#video h2 {
-		//margin: 40px 0 -30px 0;
+		//margin: 2.5em 0 -2em 0;
 	}
 	.video {
 		position: relative;
 		text-align: center;
-		top: -80px;
+		top: -5em;
+		height: 30em;
 	}
 	&:before{
 		background-color: _palette(accent2);
@@ -222,10 +223,10 @@ body{
 		content: '';
 		position: absolute;
 		width: 100%;
-		height: 40px;
-		top: 320px;
+		height: 2.5em;
+		top: 20em;
 		z-index: 1;
-		// opacity: 0.9;
+		opacity: 0.9;
 	}
 	&:after{
 		background-color: _palette(accent1);
@@ -233,8 +234,8 @@ body{
 		content: '';
 		position: absolute;
 		width: 100%;
-		height: 40px;
-		top: 745px;
+		height: 2.5em;
+		top: 46.5625em;
 		z-index: -1;
 	}
 }
@@ -269,11 +270,11 @@ body{
 		margin-bottom: 0.5em;
 	}
 	#instafeed {
-		width: 1160px;
+		width: 72.5em;
 		margin-left: 0;
 		display: inline-block;
 		@include breakpoint(xlarge) {
-			width: 920px;
+			width: 72.5em;
 		}
 		@include breakpoint(large) {
 			width: 100%;
@@ -283,11 +284,11 @@ body{
 			border: 0;
 			margin: 0;
 			padding: 0;
-			height: 290px;
-			width: 290px;
+			height: 18.125em;
+			width: 18.125em;
 			@include breakpoint(xlarge) {
-				height: 230px;
-				width: 230px;
+				height: 18.125em;
+				width: 18.125em;
 			}
 			@include breakpoint(large) {
 				height: 25%;
@@ -295,7 +296,7 @@ body{
 			}
 			position: relative;
 			display: inline-block;
-			margin-bottom: -9px;
+			margin-bottom: -0.5625em;
 			img{
 				display: block;
 				width: 100%;
@@ -303,11 +304,11 @@ body{
 		}
 	}
 	#insta-nav{
-		height: 60px;
+		height: 3.75em;
 	}
 }
 #five{
-	margin-bottom: 45px;
+	margin-bottom: 2.8125em;
 	#wrapper &{
 		//padding-left: 0;
 	}
@@ -410,6 +411,7 @@ body{
 
 	@include breakpoint(xlarge) {
 		//TODO
+		// width: (_size(sidebar-width) * 0.75);
 	}
 	@include breakpoint(large) {
 		//TODO
@@ -422,8 +424,8 @@ body{
 
 	span{
 		font-size: 1.5em;
-		width: 45px;
-		height: 45px;
+		width: 1.875em;
+		height: 1.875em;
 		display: inline-block;
 		background-position: center center;
 		background-repeat: no-repeat;

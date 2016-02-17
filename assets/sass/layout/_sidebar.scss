@@ -18,6 +18,9 @@
 		text-align: left;
 		top: 0;
 		width: _size(sidebar-width);
+		// @include breakpoint(xlarge) {
+		// 	width: (_size(sidebar-width) * 0.75);
+		// }
 		z-index: _misc(z-index-base);
 		color: _palette(accent1);
 
@@ -85,11 +88,11 @@
 				&:before,
 				&:after {
 					border-radius: 0;
-					bottom: -4px;
+					bottom: -0.25em;
 					content: '';
 					height: 1px;
 					position: absolute;
-					left: 2px;
+					left: 0.125em;
 					width: 94%;
 				}
 
@@ -194,9 +197,9 @@
 					&.logo {
 						text-align: center;
 						img {
-							width: 50px;
-							height: 50px;
-							margin: 3px;
+							width: 2.679em;
+							height: 2.679em;
+							margin: 0.4em;
 						}
 						&:before,
 						&:after {

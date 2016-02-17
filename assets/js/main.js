@@ -518,7 +518,7 @@
 
 
 		// Debug Visual.
-		var siteOpacity = 1,
+		var siteOpacity = 1.0,
 			keys = [];
 
 		window.executeHotkeyTest = function(callback, keyValues) {
