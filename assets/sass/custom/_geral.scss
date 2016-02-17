@@ -333,18 +333,12 @@ body{
 		display: block;
 		position: absolute;
 		left: 0;
-		top: 210px;
-		width: 800px;
-		height: 540px;
-
-		@include breakpoint(xlarge) {
-			top: 200px;
-			width: 640px;
-			height: 480px;
-		}
+		top: 13.125em;
+		width: 50em;
+		height: 33.75em;
 
 		@include breakpoint(large) {
-			top: 180px;
+			top: 11.25em;
 			width: 100%;
 			opacity: 0.8;
 		}
@@ -360,26 +354,17 @@ body{
 
 		@include padding(4em, 7em);
 
-		@include breakpoint(xlarge) {
-			@include padding(3em, 3em);
-		}
-
 		@include breakpoint(small) {
 			@include padding(2em, 1em);
 		}
 		section{
 			position: relative;
-			top: 10px;
-			left: 490px;
-			width: 670px;
+			top: 0.625em;
+			left: 30.625em;
+			width: 41.875em;
 
-			@include breakpoint(xlarge) {
-				top: -4px;
-				width: 580px;
-				left: 420px;
-			}
 			@include breakpoint(large) {
-				top: 40px;
+				top: 2.5em;
 				width: 100%;
 				left: 0;
 			}
@@ -388,20 +373,21 @@ body{
 	.button{
 		font-family: _font(family-alt);
 		background-color: _palette(accent3);
-		height: 40px;
-		width: 170px;
-		left: -58px;
+		height: 2.5rem;
+		width: 10.625rem;
+		left: -3.625rem;
 		text-align: right;
-		line-height: 40px;
+		line-height: 2.5rem;
 		font-size: 1.4em;
 		letter-spacing: 0.15em;
 		padding: 0 0.45em;
 
 		@include breakpoint(xlarge) {
-			left: -40px;
+			left: -2.5rem;
 		}
 		@include breakpoint(large) {
 			text-align: center;
+			left: 0;
 		}
 	}
 }
@@ -462,21 +448,21 @@ body{
 	text-align: center;
 	#counter{
 		font-family: _font(family-alt);
-		padding: 40px 0px 10px;
+		padding: 2.5rem 0rem 0.625rem;
 		button{
 			background-color: _palette(accent1);
 			cursor: default;
-			width: 380px;
-			height: 68px;
+			width: 23.75rem;
+			height: 4.25rem;
 			font-size: 1.87em;
-			line-height: 68px;
+			line-height: 4.25rem;
 			padding: 0;
 		}
 	}
 	#mm{
 		padding: 2.5em 0em 0.5em;
 		font-size: 0.7em;
-		border-bottom: 10px solid _palette(accent3);
+		border-bottom: 0.625rem solid _palette(accent3);
 		z-index: 10000;
 		position: relative;
 	}
