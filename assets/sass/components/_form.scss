@@ -9,7 +9,7 @@
 		margin: 0 0 _size(element-margin) 0;
 
 		.field {
-			margin: 0 0 (_size(element-margin) * 0.5) 0;
+			margin: 0 0 (_size(element-margin) * 0.6) 0;
 
 			&.half {
 				width: 50%;
@@ -23,7 +23,7 @@
 		}
 
 		> .actions {
-			margin: _size(element-margin) 0 0 0 !important;
+			margin: (_size(element-margin) * 0.5) 0 0 0 !important;
 		}
 
 		@include breakpoint(small) {
@@ -113,7 +113,7 @@
 	input[type="password"],
 	input[type="email"],
 	select {
-		height: _size(element-height);
+		height: (_size(element-height) + 0.25);
 	}
 
 	textarea {

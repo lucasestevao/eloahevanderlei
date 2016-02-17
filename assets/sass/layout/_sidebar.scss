@@ -85,12 +85,12 @@
 				&:before,
 				&:after {
 					border-radius: 0;
-					bottom: 0;
+					bottom: -4px;
 					content: '';
 					height: 1px;
 					position: absolute;
-					right: 0;
-					width: 100%;
+					left: 2px;
+					width: 94%;
 				}
 
 				&:before {

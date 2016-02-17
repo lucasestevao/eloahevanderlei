@@ -42,7 +42,7 @@
 				'transform #{_duration(transition)} ease'
 			));
 			background: _palette(fg-bold);
-			border-radius: 3em;
+			//border-radius: 3em;
 			content: '';
 			height: 100%;
 			left: 0;
@@ -89,7 +89,7 @@
 		}
 
 		&:hover {
-			border-color: _palette(fg) !important;
+			//border-color: _palette(fg) !important;
 
 			&:after {
 				opacity: 0.05;
@@ -97,7 +97,7 @@
 			}
 
 			&:active {
-				border-color: _palette(fg-bold) !important;
+				//border-color: _palette(fg-bold) !important;
 
 				&:after {
 					opacity: 0.1;

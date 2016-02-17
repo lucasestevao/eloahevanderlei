@@ -6,7 +6,7 @@ body{
 		background-image: url("../../site.png");
 		background-repeat: no-repeat;
 		position: absolute;
-		height: 6000px;
+		height: 5130px;
 		background-size: 100%;
 	}
 }
@@ -17,20 +17,6 @@ body{
 
 .logo{
 	position: relative;
-}
-
-.lojas{
-	opacity: 0.5;
-	padding: 15px;
-	&:hover{
-		opacity: 1;
-	}
-	@include vendor('transition', (
-		'opacity 0.5s ease-in-out'
-	));
-	@include breakpoint(large) {
-		padding: 0;
-	}
 }
 
 .image{
@@ -51,18 +37,19 @@ body{
 
 #one{
 	color: _palette(fg-dark);
-	margin-top: 45px;
-	margin-bottom: 45px;
-
+	padding-top: 90px;
+	p{
+		margin-bottom: 1.75em;
+	}
 	#wrapper &{
 		padding-left: 0;
 	}
 	.bloco{
-		width: 60%;
+		width: 56%;
 		overflow: hidden;
 		.wrapper{
 			> .inner {
-				@include padding(4em, 4em);
+				padding: 3em 7em;
 
 				@include breakpoint(xlarge) {
 					@include padding(3em, 3em);
@@ -87,9 +74,9 @@ body{
 				content: '';
 				display: block;
 				position: absolute;
-				left: 96.6666%;
+				left: 96.45%;
 				top: -45px;
-				width: 70%;
+				width: 82.1429%;
 				height: 100%;
 
 				@include breakpoint(medium) {
@@ -103,7 +90,6 @@ body{
 			}
 
 		}
-		margin-top: 85px;
 		@include breakpoint(medium) {
 			width: 100%;
 			margin: 0;
@@ -121,7 +107,7 @@ body{
 			position: absolute;
 			right: 0;
 			top: -45px;
-			width: 42%;
+			width: 46%;
 			height: 100%;
 			z-index: -1;
 
@@ -135,70 +121,79 @@ body{
 	}
 }
 #two{
-	padding-bottom: 200px;
+	padding-top: 45px;
+	padding-bottom: 280px;
+	position: relative;
 
 	#wrapper &{
 		padding-left: 0;
-		padding-right: 300px;
-		background-clip: content-box;
 
 		@include breakpoint(xlarge) {
-			padding-right: 210px;
 		}
 		@include breakpoint(large) {
-			padding-right: 160px;
 		}
 		@include breakpoint(medium) {
-			padding-right: 0px;
 		}
 	}
-	> .inner{
-		position: relative;
-		min-height: 700px;
-		margin-bottom: 260px;
-		margin-left: _size(sidebar-width);
-		border-bottom: 20px solid;
-		border-bottom-color: darken(mix(_palette(accent1), _palette(accent3), 50%), 50);
-		padding-right: 0;
-		background-color: _palette(accent3);
+	.bloco{
+		.wrapper{
+			border-bottom: 20px solid;
+			border-bottom-color: darken(mix(_palette(accent1), _palette(accent3), 50%), 50);
+			height: 720px;
+			width: 1635px;
+			@include breakpoint(xlarge) {
+				height: 720px;
+				width: 1200px;
+			}
+			@include breakpoint(large) {
+				height: 720px;
+				width: 100%;
+			}
 
-		@include breakpoint(xlarge) {
-			width: 860px;
+			> .inner {
+				position: relative;
+				z-index: 2;
+				margin-left: _size(sidebar-width);
+				@include breakpoint(xlarge) {
+				}
+				@include breakpoint(large) {
+					width: 100%;
+					margin-left: 0;
+				}
+			}
 		}
-		@include breakpoint(large) {
-			width: 760px;
-		}
-		@include breakpoint(medium) {
-			width: 100%;
-			margin-left: 0;
-		}
-
 	}
-	.owl-controls.clickable{
-		position: absolute;
-		top: 60px;
+	.owl-controls{
 		width: 100%;
 		height: 0; //estava impedindo o clique nas imagens
+		bottom: 0;
 	}
-	.owl-buttons {
-		margin-top: 12px;
-
+	.owl-nav {
+		position: relative;
+		.owl-prev,
+		.owl-next {
+			font-family: _font(family-alt);
+			letter-spacing: 0.2em;
+			font-weight: 100;
+			position: absolute;
+			top: -100px;
+			font-size: 2em;
+		}
 		.owl-prev {
-			float: left;
-			margin-left: -25px;
+			left: -60px;
 		}
 		.owl-next {
-			float: right;
-			margin-right: -25px;
+			right: -60px;
 		}
 	}
 	#thumbs{
-		width: 100%;
+		width: 1050px;
+		margin: 3.75em auto 2em;
 		.item{
-			width: 200px;
-			height: 200px;
+			width: 150px;
+			height: 150px;
 			text-align: center;
-			margin: 10px;
+			margin: auto;
 			@include breakpoint(xlarge) {
 				width: 150px;
 				height: 150px;
@@ -214,11 +209,12 @@ body{
 		}
 	}
 	#video h2 {
-		margin: 40px 0 -30px 0;
+		//margin: 40px 0 -30px 0;
 	}
 	.video {
+		position: relative;
 		text-align: center;
-		height: 200px;
+		top: -80px;
 	}
 	&:before{
 		background-color: _palette(accent2);
@@ -227,7 +223,9 @@ body{
 		position: absolute;
 		width: 100%;
 		height: 40px;
-		top: 180px;
+		top: 320px;
+		z-index: 1;
+		// opacity: 0.9;
 	}
 	&:after{
 		background-color: _palette(accent1);
@@ -236,14 +234,44 @@ body{
 		position: absolute;
 		width: 100%;
 		height: 40px;
-		bottom: -20px;
+		top: 745px;
 		z-index: -1;
 	}
 }
+#three{
+	> .inner {
+		padding: 4em 7em;
+	}
+	.lojas{
+		padding: 3em 0em 2em 0em;
+		margin: 0;
+		.loja{
+			opacity: 0.5;
+			margin: 1em 2.4em 1em 0em;
+			&:hover{
+				opacity: 1;
+			}
+			@include vendor('transition', (
+				'opacity 0.5s ease-in-out'
+			));
+			@include breakpoint(large) {
+				margin: 0;
+			}
+		}
+	}
+
+}
 #four{
+	> .inner {
+		padding: 4em 7em;
+	}
+	h2{
+		margin-bottom: 0.5em;
+	}
 	#instafeed {
-		width: 1200px;
+		width: 1160px;
 		margin-left: 0;
+		display: inline-block;
 		@include breakpoint(xlarge) {
 			width: 920px;
 		}
@@ -275,7 +303,7 @@ body{
 		}
 	}
 	#insta-nav{
-		height: 100px;
+		height: 60px;
 	}
 }
 #five{
@@ -295,9 +323,9 @@ body{
 		display: block;
 		position: absolute;
 		left: 0;
-		top: 200px;
-		width: 720px;
-		height: 480px;
+		top: 210px;
+		width: 800px;
+		height: 540px;
 
 		@include breakpoint(xlarge) {
 			top: 200px;
@@ -319,10 +347,8 @@ body{
 	}
 	> .inner {
 		position: relative;
-		//width: 100%;
-		//padding-left: 45%;
 
-		@include padding(4em, 4em);
+		@include padding(4em, 7em);
 
 		@include breakpoint(xlarge) {
 			@include padding(3em, 3em);
@@ -333,9 +359,9 @@ body{
 		}
 		section{
 			position: relative;
-			top: -4px;
-			left: 500px;
-			width: 620px;
+			top: 10px;
+			left: 490px;
+			width: 670px;
 
 			@include breakpoint(xlarge) {
 				top: -4px;
@@ -350,8 +376,17 @@ body{
 		}
 	}
 	.button{
-		left: -36px;
+		font-family: _font(family-alt);
 		background-color: _palette(accent3);
+		height: 40px;
+		width: 170px;
+		left: -58px;
+		text-align: right;
+		line-height: 40px;
+		font-size: 1.4em;
+		letter-spacing: 0.15em;
+		padding: 0 0.45em;
+
 		@include breakpoint(xlarge) {
 			left: -40px;
 		}
@@ -414,14 +449,20 @@ body{
 	color: _palette(accent3);
 	text-align: center;
 	#counter{
+		font-family: _font(family-alt);
 		padding: 40px 0px 10px;
 		button{
 			background-color: _palette(accent1);
 			cursor: default;
+			width: 380px;
+			height: 68px;
+			font-size: 1.87em;
+			line-height: 68px;
+			padding: 0;
 		}
 	}
 	#mm{
-		padding: 1em 0em 0.5em;
+		padding: 2.5em 0em 0.5em;
 		font-size: 0.7em;
 		border-bottom: 10px solid _palette(accent3);
 		z-index: 10000;

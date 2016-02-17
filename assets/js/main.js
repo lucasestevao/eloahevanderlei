@@ -172,8 +172,8 @@
 					// Scrollex.
 					$section.scrollex({
 						mode: 'middle',
-						top: '-20vh',
-						bottom: '-20vh',
+						top: '-10vh',
+						bottom: '-10vh',
 						initialize: function() {
 
 							// Deactivate section.
@@ -263,8 +263,8 @@
 			$('.features')
 			.scrollex({
 				mode: 'middle',
-				top: '-20vh',
-				bottom: '-20vh',
+				top: '-10vh',
+				bottom: '-10vh',
 				initialize: function() {
 
 					// Deactivate section.
@@ -463,22 +463,27 @@
 
 		owl.owlCarousel({
 			items: 6,
-			itemsDesktop: [1280, 5],
-			itemsDesktopSmall: [980, 4],
-			itemsTablet: [736, 3],
-			itemsMobile: false,
-			pagination: false,
-			navigation: true,
-			navigationText: ['<<', '>>'],
-			autoHeight: true
-		});
-
-		// Custom Navigation Events
-		owl.find('.next').click(function() {
-			owl.trigger('owl.next');
-		});
-		owl.find('.prev').click(function() {
-			owl.trigger('owl.prev');
+			loop: true,
+			margin: 26,
+			dots: false,
+			nav: true,
+			navText: ['&#60;&#60;', '&#62;&#62;'],
+			responsiveClass: true,
+			responsive: {
+				363: {
+					items: 3,
+					nav: true
+				},
+				980: {
+					items: 5,
+					nav: false
+				},
+				1280: {
+					items: 6,
+					nav: true,
+					loop: false
+				}
+			}
 		});
 
 		// Site Cover.
@@ -567,6 +572,11 @@
 				opacity: siteOpacity < 0 ? 0 : siteOpacity
 			});
 		}, [16, 40]);
+
+		// $('body').find('section').css({
+		// 	opacity: 0.8
+		// });
+
 
 	});
 
