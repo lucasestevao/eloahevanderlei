@@ -279,12 +279,9 @@ body{
 		margin-bottom: 0.5em;
 	}
 	#instafeed {
-		width: 72.5em;
+		width: 72.55em;
 		margin-left: 0;
 		display: inline-block;
-		@include breakpoint(xlarge) {
-			width: 72.5em;
-		}
 		@include breakpoint(large) {
 			width: 100%;
 			margin: auto;
