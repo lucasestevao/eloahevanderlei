@@ -51,6 +51,10 @@ body{
 			> .inner {
 				padding: 3em 7em;
 
+				// @include breakpoint(xlarge) {
+				// 	@include padding(3em, 3em);
+				// }
+
 				@include breakpoint(small) {
 					@include padding(2em, 1em);
 				}
@@ -140,6 +144,7 @@ body{
 			border-bottom-color: darken(mix(_palette(accent1), _palette(accent3), 50%), 50);
 			height: 45em;
 			width: 102.1875em;
+			max-width: 100%;
 			@include breakpoint(xlarge) {
 				height: 45em;
 				width: 102.1875em;
@@ -188,6 +193,7 @@ body{
 	}
 	#thumbs{
 		width: 65.625em;
+		max-width: 100%;
 		margin: 3.75em auto 2em;
 		.item{
 			width: 9.375em;
@@ -257,6 +263,9 @@ body{
 			));
 			@include breakpoint(large) {
 				margin: 0;
+				img{
+					width: 100%;
+				}
 			}
 		}
 	}
@@ -438,6 +447,7 @@ body{
 
 		&.play{
 			background-image: url('../img/play.png');
+			background-size: contain;
 			color: transparent;
 			&.pause{
 				background-image: url('../img/pause.png');
