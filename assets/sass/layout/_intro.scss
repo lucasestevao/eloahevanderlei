@@ -13,6 +13,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		text-align: center;
+		min-height: 400px;
 
 		@include vendor('transition', (
 			'background #{_duration(header)} ease-in-out'
@@ -65,8 +66,8 @@
 				left: -1.75em;
 			}
 			@include breakpoint(large) {
-				top: inherit;
-				left: inherit;
+				top: initial;
+				left: initial;
 			}
 		}
 

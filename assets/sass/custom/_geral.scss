@@ -51,12 +51,12 @@ body{
 			> .inner {
 				padding: 3em 7em;
 
-				// @include breakpoint(xlarge) {
-				// 	@include padding(3em, 3em);
-				// }
+				@include breakpoint(large) {
+					@include padding(3em, 5em);
+				}
 
 				@include breakpoint(small) {
-					@include padding(2em, 1em);
+					@include padding(2em, 2em);
 				}
 			}
 			padding-left: _size(sidebar-width);
@@ -127,6 +127,7 @@ body{
 	padding-top: 2.8125em;
 	padding-bottom: 17.4999em;
 	position: relative;
+	overflow: hidden;
 
 	#wrapper &{
 		padding-left: 0;
@@ -214,14 +215,24 @@ body{
 			}
 		}
 	}
-	#video h2 {
-		//margin: 2.5em 0 -2em 0;
+	#video {
+		@include breakpoint(small) {
+			h2{
+				display: none;
+			}
+		}
 	}
 	.video {
 		position: relative;
 		text-align: center;
 		top: -5em;
 		height: 30em;
+		width: 72.75%;
+		margin: auto;
+		@include breakpoint(small) {
+			top: 1em;
+			width: 100%;
+		}
 	}
 	&:before{
 		background-color: _palette(accent2);
@@ -233,6 +244,9 @@ body{
 		top: 20em;
 		z-index: 1;
 		opacity: 0.9;
+		@include breakpoint(medium) {
+			top: 17.5em;
+		}
 	}
 	&:after{
 		background-color: _palette(accent1);
@@ -248,10 +262,23 @@ body{
 #three{
 	> .inner {
 		padding: 4em 7em;
+		@include breakpoint(small) {
+			padding: 4em 0em;
+		}
+	}
+	@include breakpoint(small) {
+		h2{
+			text-align: center;
+		}
 	}
 	.lojas{
 		padding: 3em 0em 2em 0em;
 		margin: 0;
+		@include breakpoint(small) {
+			display: block;
+			width: 100%;
+			padding: 3em 3em 2em 3em;
+		}
 		.loja{
 			opacity: 0.5;
 			margin: 1em 2.4em 1em 0em;
@@ -267,6 +294,20 @@ body{
 					width: 100%;
 				}
 			}
+			@include breakpoint(small) {
+				display: inline-block;
+				width: 50%;
+				margin-bottom: 2em;
+				text-align: center;
+				&:last-child{
+					width: 100%;
+				}
+			}
+			@include breakpoint(xsmall) {
+				>*{
+					width: initial;
+				}
+			}
 		}
 	}
 
@@ -274,9 +315,15 @@ body{
 #four{
 	> .inner {
 		padding: 4em 7em;
+		@include breakpoint(small) {
+			padding: 4em 0em;
+		}
 	}
 	h2{
 		margin-bottom: 0.5em;
+		@include breakpoint(small) {
+			text-align: center;
+		}
 	}
 	#instafeed {
 		width: 72.55em;

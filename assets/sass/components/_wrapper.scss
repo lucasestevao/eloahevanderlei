@@ -23,7 +23,7 @@
 			}
 
 			@include breakpoint(small) {
-				@include padding(2em, 2em);
+				@include padding(2em, 1em);
 			}
 		}
 

@@ -470,18 +470,21 @@
 			navText: ['&#60;&#60;', '&#62;&#62;'],
 			responsiveClass: true,
 			responsive: {
-				363: {
+				360: {
 					items: 3,
+					nav: false
+				},
+				480: {
+					items: 4,
 					nav: true
 				},
 				980: {
 					items: 5,
-					nav: false
+					nav: true
 				},
 				1280: {
 					items: 6,
-					nav: true,
-					loop: false
+					nav: true
 				}
 			}
 		});
