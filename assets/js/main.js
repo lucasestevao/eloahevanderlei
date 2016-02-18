@@ -108,12 +108,16 @@
 							$('#email').val('');
 							$('#message').val('');
 						}
+
+						//console.log(data, response);
 					}
 				},
 				error: function(data) {
 					if (data) {
 						$('.return-message').addClass('fail').html(JSON.parse(data).message);
 					}
+
+					//console.log(data);
 				}
 			});
 		});

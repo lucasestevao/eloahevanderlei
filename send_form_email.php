@@ -1,4 +1,8 @@
 <?php
+	error_reporting(-1);
+	ini_set('display_errors', 'On');
+	set_error_handler('var_dump');
+
 	$email_to = 'eloahevanderlei@gmail.com';
 	$email_subject = '[ELOAH&VANDERLEI] Mensagem via site';
 	$return = $_POST;
@@ -14,6 +18,9 @@
 	function returnData($error, $message){
 		$return['error'] = $error;
 		$return['message'] = $message;
+		$return['name'] = $_POST['name'];
+		$return['email'] = $_POST['email'];
+		$return['messagebody'] = $_POST['message'];
 
 		echo json_encode($return);
 		die();
@@ -56,9 +63,11 @@
 
 	$email_message = clean_string( $message );
 
-	$from="From: $name<$email>\r\nReturn-path: $email"; 
+	$from="From: $name<no-reply@eloahevanderlei.com>\r\nReply-To: $name<$email>";
 
-	mail($email_to, $email_subject, $email_message, $from);
-
-	success();
+	if ( @mail($email_to, $email_subject, $email_message, $from) ) {
+		success();
+	} else {
+		fail( 'Houve um erro no servidor de emails.' );
+	}
 ?>

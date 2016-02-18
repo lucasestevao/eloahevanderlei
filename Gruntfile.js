@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		watch: {
@@ -126,7 +125,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-	// Load the Grunt plugins.
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-concat');
@@ -138,7 +136,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-jsbeautifier');
 
-	// Register the default tasks.
-	grunt.registerTask('default', ['clean', 'copy', 'compass', 'htmlmin', 'concat', 'uglify', 'imagemin']);
+	grunt.registerTask('default', ['clean', 'copy', 'compass', 'htmlmin', 'js', 'imagemin']);
 	grunt.registerTask('js', ['jsbeautifier', 'jshint', 'concat', 'uglify']);
 };
