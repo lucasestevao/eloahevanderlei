@@ -515,6 +515,7 @@
 
 		// Instagram.
 		var feed = new Instafeed({
+			resolution: 'low_resolution',
 			get: 'tagged',
 			tagName: 'eloahevanderlei',
 			clientId: 'fd88310566744275a3d68092d9c175d1',
