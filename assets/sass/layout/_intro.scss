@@ -87,7 +87,4 @@
 		@include breakpoint(large) {
 			background-attachment: scroll;
 		}
-		@include breakpoint(small) {
-			min-height: 400px;
-		}
 	}

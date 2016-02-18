@@ -68,22 +68,22 @@
 				height: 100vh;
 			}
 
-			@include breakpoint(large) {
-				min-height: calc(100vh - 2.5em);
+			// @include breakpoint(large) {
+			// 	min-height: calc(100vh - 2.5em);
 
-				body.is-ie & {
-					height: calc(100vh - 2.5em);
-				}
-			}
+			// 	body.is-ie & {
+			// 		height: calc(100vh - 2.5em);
+			// 	}
+			// }
 
-			@include breakpoint(small) {
-				padding: 2em 0;
-				min-height: 0;
+			// @include breakpoint(small) {
+			// 	padding: 2em 0;
+			// 	min-height: 0;
 
-				body.is-ie & {
-					height: auto;
-				}
-			}
+			// 	body.is-ie & {
+			// 		height: auto;
+			// 	}
+			// }
 		}
 
 		&.fade-up {

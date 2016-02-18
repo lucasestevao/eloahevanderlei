@@ -24,6 +24,10 @@
 		@include breakpoint(small) {
 			font-size: 12px;
 		}
+
+		@include breakpoint(xsmall) {
+			font-size: 10px;
+		}
 	}
 
 	a {
