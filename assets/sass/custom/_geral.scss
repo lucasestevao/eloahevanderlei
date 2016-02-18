@@ -11,6 +11,18 @@ body{
 	}
 }
 
+.envelope{
+	body.modal-active &{
+		@include vendor('filter', 'blur(8px)');
+
+		&:after {
+			@include vendor('pointer-events', 'auto');
+			opacity: 1;
+			visibility: visible;
+			z-index: _misc(z-index-base) + 3;
+		}
+	}
+}
 .hidden{
 	display: none;
 }

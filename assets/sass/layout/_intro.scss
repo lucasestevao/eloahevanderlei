@@ -13,7 +13,6 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		text-align: center;
-		min-height: 400px;
 
 		@include vendor('transition', (
 			'background #{_duration(header)} ease-in-out'
@@ -87,5 +86,8 @@
 
 		@include breakpoint(large) {
 			background-attachment: scroll;
+		}
+		@include breakpoint(small) {
+			min-height: 400px;
 		}
 	}
