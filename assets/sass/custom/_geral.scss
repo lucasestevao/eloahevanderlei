@@ -351,20 +351,37 @@ body{
 			padding: 0;
 			height: 18.125em;
 			width: 18.125em;
+			position: relative;
+			display: inline-block;
+			margin-bottom: -0.5625em;
+			overflow: hidden;
+
 			@include breakpoint(xlarge) {
 				height: 18.125em;
 				width: 18.125em;
 			}
+
 			@include breakpoint(large) {
 				height: 25%;
 				width: 25%;
 			}
-			position: relative;
-			display: inline-block;
-			margin-bottom: -0.5625em;
-			img{
+
+			img {
 				display: block;
 				width: 100%;
+			}
+			img.portrait, img.landscape {
+				position: absolute;
+			}
+			img.portrait {
+				width: 177%;
+				top: -39%;
+				left: -32%;
+			}
+			img.landscape {
+				width: 177%;
+				top: -39%;
+				left: -32%;
 			}
 		}
 	}

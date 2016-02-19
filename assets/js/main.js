@@ -515,11 +515,11 @@
 
 		// Instagram.
 		var feed = new Instafeed({
-			resolution: 'low_resolution',
+			resolution: 'standard_resolution',
 			get: 'tagged',
 			tagName: 'eloahevanderlei',
 			clientId: 'fd88310566744275a3d68092d9c175d1',
-			template: '<a href="{{link}}" target="_blank"><img src="{{image}}" alt="{{caption}}" title="{{caption}}" /></a>'
+			template: '<a href="{{link}}" target="_blank"><img src="{{image}}" alt="{{caption}}" title="{{caption}}" class="{{orientation}}" /></a>'
 		});
 
 		feed.run();
