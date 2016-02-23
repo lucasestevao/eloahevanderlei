@@ -113,11 +113,9 @@
 					}
 				},
 				error: function(data) {
-					if (data) {
-						$('.return-message').addClass('fail').html(JSON.parse(data).message);
+					if (data && typeof data === 'object') {
+						$('.return-message').addClass('fail').html(data.status + ' | Ops! Ocorreu um erro, tente novamente mais tarde.');
 					}
-
-					//console.log(data);
 				}
 			});
 		});
@@ -474,6 +472,10 @@
 			navText: ['&#60;&#60;', '&#62;&#62;'],
 			responsiveClass: true,
 			responsive: {
+				320: {
+					items: 2,
+					nav: false
+				},
 				360: {
 					items: 3,
 					nav: false

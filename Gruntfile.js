@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 					'assets/sass/**/*.sass',
 					'assets/sass/**/*.scss'
 				],
-				tasks: ['compass']
+				tasks: ['compass', 'purifycss']
 			},
 			js: {
 				files: [
@@ -31,6 +31,17 @@ module.exports = function(grunt) {
 					outputStyle: 'compressed'
 				}
 			}
+		},
+		purifycss: {
+			options: {
+				minify: true,
+				whitelist: ['.return-message.fail']
+			},
+			target: {
+				src: ['index.html', 'build/js/main.min.js'],
+				css: ['build/css/main.css'],
+				dest: 'build/css/main.min.css'
+			},
 		},
 		jshint: {
 			options: {
@@ -58,8 +69,8 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			options: {
-				beautify: true,
-				mangle: false
+				beautify: false,
+				mangle: true
 			},
 			js: {
 				files: {
@@ -136,7 +147,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-jsbeautifier');
+	grunt.loadNpmTasks('grunt-purifycss');
 
-	grunt.registerTask('default', ['clean', 'copy', 'compass', 'htmlmin', 'js', 'imagemin']);
+	grunt.registerTask('default', ['clean', 'copy', 'compass', 'purifycss', 'htmlmin', 'js', 'imagemin']);
 	grunt.registerTask('js', ['jsbeautifier', 'jshint', 'concat', 'uglify']);
 };
