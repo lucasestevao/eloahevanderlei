@@ -520,9 +520,9 @@ body{
 	color: _palette(accent3);
 	text-align: center;
 	#counter{
-		font-family: _font(family-alt);
 		padding: 2.5rem 0rem 0.625rem;
 		button{
+			font-family: _font(family-alt);
 			background-color: _palette(accent1);
 			cursor: default;
 			width: 23.75rem;
