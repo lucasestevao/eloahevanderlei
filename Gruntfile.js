@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: [
-					'assets/js/main.js',
+					'assets/js/*.js',
 					'Gruntfile.js'
 				],
 				tasks: ['js']
