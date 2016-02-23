@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 		purifycss: {
 			options: {
 				minify: true,
-				whitelist: ['.return-message.fail']
+				whitelist: ['.return-message.fail', 'html>object']
 			},
 			target: {
 				src: ['index.html', 'build/js/main.min.js'],
@@ -149,6 +149,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-jsbeautifier');
 	grunt.loadNpmTasks('grunt-purifycss');
 
-	grunt.registerTask('default', ['clean', 'copy', 'compass', 'purifycss', 'htmlmin', 'js', 'imagemin']);
+	grunt.registerTask('default', ['clean', 'copy', 'compass', 'htmlmin', 'js', 'purifycss', 'imagemin']);
 	grunt.registerTask('js', ['jsbeautifier', 'jshint', 'concat', 'uglify']);
 };
