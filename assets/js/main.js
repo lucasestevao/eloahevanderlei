@@ -585,6 +585,7 @@
 		// 	opacity: 0.8
 		// });
 
+		$('.loja-img').lazyload();
 
 	});
 

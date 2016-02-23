@@ -50,6 +50,7 @@ module.exports = function(grunt) {
 					'assets/js/util.js',
 					'assets/js/instafeed.min.js',
 					'assets/js/validatinator.min.js',
+					'assets/js/jquery.lazyload.js',
 					'assets/js/main.js'
 				],
 				dest: '.temp/js/main.js'

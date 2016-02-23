@@ -504,12 +504,16 @@ body{
 			'background #{_duration(transition)} ease-in-out'
 		));
 
-		&.play{
-			background-image: url('../img/play.png');
-			background-size: contain;
+		&.play, &.pause {
+			background-image: url('../img/player.png');
+		}
+
+		&.play {
+			background-position: 0 0;
+			background-size: cover;
 			color: transparent;
 			&.pause{
-				background-image: url('../img/pause.png');
+				background-position: -31px 0;
 			}
 		}
 	}
