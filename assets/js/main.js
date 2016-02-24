@@ -36,7 +36,6 @@
 
 		// Forms.
 
-
 		function validateForm() {
 			var nameReg = /^[A-Za-z .'-çÇãáéíóúÁÉÍÓÚâêôÂÊÔàèìòùÀÈÌÒ]+$/;
 			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
@@ -221,65 +220,6 @@
 			}
 		});
 
-		// Spotlights.
-		$('.spotlights > section')
-			.scrollex({
-				mode: 'middle',
-				top: '-10vh',
-				bottom: '-10vh',
-				initialize: function() {
-
-					// Deactivate section.
-					if (skel.canUse('transition'))
-						$(this).addClass('inactive');
-
-				},
-				enter: function() {
-
-					// Activate section.
-					$(this).removeClass('inactive');
-
-				}
-			})
-			.each(function() {
-
-				var $this = $(this),
-					$image = $this.find('.image'),
-					$img = $image.find('img'),
-					x;
-
-				// Assign image.
-				$image.css('background-image', 'url(' + $img.attr('src') + ')');
-
-				// Set background position.
-				if (x == $img.data('position'))
-					$image.css('background-position', x);
-
-				// Hide <img>.
-				$img.hide();
-
-			});
-
-		// Features.
-		if (skel.canUse('transition'))
-			$('.features')
-			.scrollex({
-				mode: 'middle',
-				top: '-10vh',
-				bottom: '-10vh',
-				initialize: function() {
-
-					// Deactivate section.
-					$(this).addClass('inactive');
-
-				},
-				enter: function() {
-
-					// Activate section.
-					$(this).removeClass('inactive');
-
-				}
-			});
 		// Gallery.
 		var $gallery = $('#thumbs');
 
@@ -287,27 +227,14 @@
 		$gallery.children('.thumb').each(function() {
 
 			var $this = $(this),
-				$image = $this.find('.image'),
-				$image_img = $image.children('img'),
-				x;
+				$image = $this.find('.image');
 
 			// No image? Bail.
 			if ($image.length === 0)
 				return;
 
-			// Image.
-			// This sets the background of the 'image' <span> to the image pointed to by its child
-			// <img> (which is then hidden). Gives us way more flexibility.
-
 			// Set background.
-			$image.css('background-image', 'url(' + $image_img.attr('src') + ')');
-
-			// Set background position.
-			if (x == $image_img.data('position'))
-				$image.css('background-position', x);
-
-			// Hide original img.
-			$image_img.hide();
+			$image.css('background-image', 'url(' + $image.data('imgsrc') + ')');
 
 			// Hack: IE<11 doesn't support pointer-events, which means clicks to our image never
 			// land as they're blocked by the thumbnail's caption overlay gradient. This just forces
@@ -458,6 +385,7 @@
 				playPause(1);
 			});
 		}
+
 		initializePlayer();
 
 		// Sliders.

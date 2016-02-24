@@ -10,7 +10,6 @@
 		@include vendor('transition', (
 			'-moz-filter #{_duration(panel)} ease',
 			'-webkit-filter #{_duration(panel)} ease',
-			'-ms-filter #{_duration(panel)} ease',
 			'filter #{_duration(panel)} ease'
 		));
 		@include vendor('display', 'flex');
