@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					sassDir: 'assets/sass',
-					cssDir: 'build/css',
+					cssDir: '.temp/css',
 					outputStyle: 'compressed'
 				}
 			}
@@ -39,9 +39,19 @@ module.exports = function(grunt) {
 			},
 			target: {
 				src: ['index.html', 'build/js/main.min.js'],
-				css: ['build/css/main.css'],
-				dest: 'build/css/main.min.css'
+				css: ['.temp/css/main.css'],
+				dest: '.temp/css/main.min.css'
 			},
+		},
+		dataUri: {
+			dist: {
+				src: ['.temp/css/main.min.css'],
+				dest: 'build/css/',
+				options: {
+					target: ['build/img/lojas/*.*'],
+					maxBytes: 2048
+				}
+			}
 		},
 		jshint: {
 			options: {
@@ -146,6 +156,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-data-uri');
 	grunt.loadNpmTasks('grunt-jsbeautifier');
 	grunt.loadNpmTasks('grunt-purifycss');
 
