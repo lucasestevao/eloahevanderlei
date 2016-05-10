@@ -26,4 +26,4 @@ Open the `index.html` file.
 
 ## License
 
-<a href="http://opensource.org/licenses/MIT" target="_blank">The MIT License</a>
+<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/legalcode" target="_blank">Attribution-NonCommercial-NoDerivatives 4.0 International</a>
