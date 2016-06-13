@@ -448,7 +448,8 @@
 			resolution: 'standard_resolution',
 			get: 'tagged',
 			tagName: 'eloahevanderlei',
-			clientId: 'fd88310566744275a3d68092d9c175d1',
+			userId: '1737992001',
+			accessToken: '1737992001.5265b32.8141c53430ac4e70abb59280c0e1b00a',
 			template: '<a href="{{link}}" target="_blank"><img src="{{image}}" alt="{{caption}}" title="{{caption}}" class="{{orientation}}" /></a>'
 		});
 
