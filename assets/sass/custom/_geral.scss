@@ -347,12 +347,14 @@ body{
 		}
 		a {
 			border: 0;
-			margin: 0;
 			padding: 0;
 			height: 18.125em;
 			width: 18.125em;
 			position: relative;
 			display: inline-block;
+			margin-top: 0em;
+			margin-left: -0.125em;
+			margin-right: -0.125em;
 			margin-bottom: -0.5625em;
 			overflow: hidden;
 

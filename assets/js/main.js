@@ -444,16 +444,15 @@
 		}, 5000);
 
 		// Instagram.
-		var feed = new Instafeed({
-			resolution: 'standard_resolution',
-			get: 'tagged',
-			tagName: 'eloahevanderlei',
-			userId: '1737992001',
-			accessToken: '1737992001.5265b32.8141c53430ac4e70abb59280c0e1b00a',
-			template: '<a href="{{link}}" target="_blank"><img src="{{image}}" alt="{{caption}}" title="{{caption}}" class="{{orientation}}" /></a>'
-		});
+		// var feed = new Instafeed({
+		// 	resolution: 'standard_resolution',
+		// 	get: 'user',
+		// 	userId: '307378172',
+		// 	accessToken: '307378172.b67c612.60f0107b23a04e3a93ba97dd8e0905ea',
+		// 	template: '<a href="{{link}}" target="_blank"><img src="{{image}}" alt="{{caption}}" title="{{caption}}" class="{{orientation}}" /></a>'
+		// });
 
-		feed.run();
+		// feed.run();
 
 
 		// Debug Visual.
